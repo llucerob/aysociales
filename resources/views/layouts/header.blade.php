@@ -35,11 +35,7 @@
         <li class="profile-nav onhover-dropdown pe-0 py-0">
           <div class="media profile-media"><img class="b-r-10" src="{{ asset('assets/images/dashboard/profile.png') }}" alt="">
             <div class="media-body"><span>{{Auth::user()->name}}</span>
-              <p class="mb-0 font-roboto"> @if(Auth::user()->hasRole('admin')) Administrador 
-                @elseif (Auth::user()->hasRole('social')) Social 
-                @elseif (Auth::user()->hasRole('bodega')) Bodega @endif
-               
-                
+              <p class="mb-0 font-roboto"> 
                 <i class="middle fa fa-angle-down"></i></p>
             </div>
           </div>
@@ -47,10 +43,10 @@
             <li><a href="{{url('profile')}}"><i data-feather="user"></i><span>Perfil </span></a></li>
             
             <li> <!-- Authentication -->
-              <form method="POST" action="{{ route('logout') }}">
+              <form method="POST" action="">
                   @csrf
 
-                  <x-responsive-nav-link :href="route('logout')"
+                  <x-responsive-nav-link :href=""
                           onclick="event.preventDefault();
                                       this.closest('form').submit();">
                       <i data-feather="log-in"> </i><span>Log Out</span></a>
