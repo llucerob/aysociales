@@ -48,7 +48,7 @@
                 </li>
 
             
-            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="{{route('listar.devoluciones')}}">
+            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
                   <svg class="stroke-icon">
                     <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
                   </svg>
@@ -57,7 +57,7 @@
                   </svg><span>Lista Reembolsos</span></a>
             </li>
 
-            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="{{route('crear.nominareembolsos')}}">
+            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
                     <svg class="stroke-icon">
                       <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
                     </svg>
@@ -65,7 +65,7 @@
                       <use href="{{ asset('assets/svg/icon-sprite.svg#fill-charts') }}"></use>
                     </svg><span>Nómina Transferencia</span></a>
             </li>
-            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="{{route('aportes.fallas', ['sin-decreto'])}}">
+            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
                     <svg class="stroke-icon">
                       <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
                     </svg>
@@ -82,7 +82,7 @@
             </li>
 
            
-              <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="{{route('crear.decreto')}}">
+              <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
                 <svg class="stroke-icon">
                   <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
                 </svg>
@@ -106,8 +106,8 @@
                   <use href="{{ asset('assets/svg/icon-sprite.svg#fill-to-do') }}"></use>
                 </svg><span>Solicitud Municipal</span></a>
                 <ul class="sidebar-submenu">
-                  <li><a href="{{route('listar.municipal')}}">Listar Solicitudes</a></li>
-                  <li><a href="{{route('solicitud.municipal')}}">Crear Solicitud</a></li>
+                  <li><a href="">Listar Solicitudes</a></li>
+                  
                  
                 </ul>
             </li>
@@ -128,9 +128,8 @@
                   <use href="{{ asset('assets/svg/icon-sprite.svg#fill-bonus-kit') }}"></use>
                 </svg><span>Materiales</span></a>
               <ul class="sidebar-submenu">
-                <li><a href="{{route('materiales.index')}}">Listar Material</a></li>
-                <li><a href="{{route('materiales.create')}}">Nuevo Material</a></li>
-                <li><a href="{{route('controlmasivo')}}">Analisis Material</a></li>
+                <li><a href="">Listar Material</a></li>
+                
               </ul>
               </li>
 
@@ -148,9 +147,8 @@
                     <use href="{{ asset('assets/svg/icon-sprite.svg#fill-to-do') }}"></use>
                   </svg><span>Más</span></a>
                   <ul class="sidebar-submenu">
-                    <li><a href="{{route('medidas')}}">Medidas</a></li>
-                    <li><a href="{{route('categorias')}}">Categorias</a></li>
-                    <li><a href="{{route('sectores')}}">Sectores</a></li>
+                    <li><a href="">Medidas</a></li>
+                    
                   </ul>
               </li>
 
