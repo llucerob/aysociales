@@ -22,6 +22,18 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/formulario', function () {
+    return view('formularios.formulario');
+})->middleware(['auth', 'verified'])->name('formularios.formulario');
+
+Route::post('/formulario', function () {
+
+    $decreto= request('message');
+
+    return request('message');
+})->name('formularios.formulario');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
