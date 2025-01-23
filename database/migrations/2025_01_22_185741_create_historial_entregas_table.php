@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('medida');
             $table->string('comentario_solicitud')->nullable();
             $table->enum('entrega', ['D', 'L']);
-            $table->strign('atendido');
+            $table->string('atendido');
             $table->enum('estado', ['Entregado', 'Devuelto']);
             $table->string('cerrado');
             $table->timestamps();
