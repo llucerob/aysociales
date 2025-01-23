@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->string('direccion');
-
+            $table->string('sector');
 
             $table->string('lat');
             $table->string('long');

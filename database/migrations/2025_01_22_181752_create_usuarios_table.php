@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('registros_sociales_id')
                     ->constrained('registros_sociales')
                     ->onDelete('cascade');
-            $table->string('sector');
+            
             $table->integer('telefono')->nullable();
             $table->string('correo')->nullable();
             $table->string('fnac');
