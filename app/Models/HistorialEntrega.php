@@ -13,7 +13,7 @@ class HistorialEntrega extends Model
 
     public function registro()
     {
-        return $this->belongsTo(usuario::class,'usuarios', 'usuario_id')
+        return $this->belongsTo(Usuario::class,'usuarios', 'usuario_id')
         -> as ('historial');
 
 

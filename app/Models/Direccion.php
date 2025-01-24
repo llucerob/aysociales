@@ -13,7 +13,7 @@ class Direccion extends Model
 
     public function direccion()
     {
-        return $this->belongsTo(usuario::class, 'usuario_id','id');
+        return $this->belongsTo(Usuario::class, 'usuario_id','id');
     }
 
     protected $casts = [
