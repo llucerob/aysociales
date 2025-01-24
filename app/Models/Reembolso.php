@@ -12,7 +12,7 @@ class Reembolso extends Model
 
     protected function reembolso()
     {
-        return $this->belongsTo(usuario::class, 'usuarios_id','id');
+        return $this->belongsTo(Usuario::class, 'usuarios_id','id');
     }
 
 }
