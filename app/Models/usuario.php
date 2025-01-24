@@ -10,14 +10,21 @@ class usuario extends Model
     use HasFactory;
 
     public function usuario() {
-        return $this->belongsTo(Material::class,'solicitudes', 'usuario_id','materiales_id')
+        return $this->belongsToMany(Material::class,'solicitudes', 'usuario_id','materiales_id')
         -> as ('solicitudes')
         -> whitpivot('cantidad','medida','comentario','entrega','atendido');
 
 
     }
 
+    public function registro()
+    {
+        return $this->belongsToMany(Material::class,'historial_entregas', 'usuario_id','materiales_id')
 
+        -> whitpivot('cantidad','medida','comentario','entrega','atendido','estado','cerrado');
+
+
+    }
 
 
 }

@@ -11,5 +11,16 @@ class HistorialEntrega extends Model
 
     protected $table = 'HistorialEntrega';
 
+    public function registro()
+    {
+        return $this->belongsTo(usuario::class,'usuarios', 'usuario_id')
+        -> as ('historial');
+
+
+    }
+
+
+
+
 
 }
