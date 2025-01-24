@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CuentaBancaria extends Model
 {
@@ -11,7 +12,7 @@ class CuentaBancaria extends Model
 
     protected $table = 'CuentaBancaria';
 
-    public function cuenta()
+    public function cuenta():BelongsTo
     {
         return $this->belongsTo(Usuario::class, 'Usuario_id','id');
     }
