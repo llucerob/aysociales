@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a349383c5500fe749471b3bfb83df832",
+    "content-hash": "118591a3c916156833ba8d551fceb6a4",
     "packages": [
         {
             "name": "brick/math",
@@ -1053,6 +1053,79 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "laragear/rut",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laragear/Rut.git",
+                "reference": "ccccb37482ce0bffc9812566a7ea61efb5b916c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laragear/Rut/zipball/ccccb37482ce0bffc9812566a7ea61efb5b916c0",
+                "reference": "ccccb37482ce0bffc9812566a7ea61efb5b916c0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "10.*|11.*",
+                "illuminate/support": "10.*|11.*",
+                "illuminate/validation": "10.*|11.*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "8.*|9.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Generator": "Laragear\\Rut\\Facades\\Generator"
+                    },
+                    "providers": [
+                        "Laragear\\Rut\\RutServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laragear\\Rut\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Italo Israel Baeza Cabrera",
+                    "email": "DarkGhostHunter@Gmail.com",
+                    "homepage": "https://github.com/sponsors/DarkGhostHunter",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools to parse, validate and generate Chilean RUT in Laravel.",
+            "keywords": [
+                "chile",
+                "laravel",
+                "rut"
+            ],
+            "support": {
+                "issues": "https://github.com/Laragear/Rut/issues",
+                "source": "https://github.com/Laragear/Rut"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/DarkGhostHunter",
+                    "type": "Github Sponsorship"
+                },
+                {
+                    "url": "https://paypal.me/darkghosthunter",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2024-07-26T06:01:02+00:00"
         },
         {
             "name": "laravel/framework",

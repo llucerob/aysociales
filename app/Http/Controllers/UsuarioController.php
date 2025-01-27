@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
+use App\Rules\ValidRut;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -20,7 +21,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -28,7 +29,14 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validar el RUT y otros campos
+        $request->validate([# validate se ejecuta antes que store
+            'rut' => ['required', new ValidRut],
+
+        ]);
+
+        // Crear un nuevo usuario con los datos validados
+
     }
 
     /**
@@ -36,7 +44,7 @@ class UsuarioController extends Controller
      */
     public function show(usuario $usuario)
     {
-        //
+
     }
 
     /**

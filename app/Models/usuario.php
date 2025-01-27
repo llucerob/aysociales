@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Rules\ValidRut;
+use Illuminate\Http\Request;
 
 class Usuario extends Model
 {
@@ -31,4 +33,21 @@ class Usuario extends Model
     {
         $this->attributes['rut'] = str_replace(['.', '-'], '', $value);
     }
+
+
+
+
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'rut' => ['required', new ValidRut],
+            // otras reglas de validación
+        ]);
+
+        // Procesar el formulario
+    }
 }
+
+
+
