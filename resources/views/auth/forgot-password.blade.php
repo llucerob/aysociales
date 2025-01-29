@@ -1,11 +1,10 @@
 @extends('layouts.auth.master')
 
-@section('title', 'Forgot Password')
+@section('title', 'Restaurar Contraseña')
 
 @section('css')
 
-<!-- Incluye jQuery desde una CDN -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 @endsection
 
 
@@ -76,4 +75,7 @@
 @endsection
 
 @section('scripts')
+<!-- Incluye jQuery desde una CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 @endsection

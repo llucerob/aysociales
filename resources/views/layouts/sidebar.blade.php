@@ -32,11 +32,11 @@
                 </svg>
                 <svg class="fill-icon">
                   <use href="{{ asset('assets/svg/icon-sprite.svg#fill-user') }}"></use>
-                </svg><span>Beneficiarios</span></a>
+                </svg><span>Usuarios</span></a>
                 <ul class="sidebar-submenu" style="display: block;">
-                <li><a href="{{url('beneficiarios/listar')}}">Listar Beneficiario</a>
+                <li><a href="{{url('usuarios/listar')}}">Listar Usuarios</a>
                 </li>
-                <li><a href="{{url('beneficiarios/nuevo')}}">Nuevo Beneficiario</a>
+                <li><a href="{{route('vista_nuevo_usuario')}}">Nuevo Usuario</a>
                 </li></ul>
               </li>
             
