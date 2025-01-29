@@ -29,20 +29,21 @@ Route::get('/forgot-password', function () {
 })->name('forgot_password');
 
 Route::get('/profile', function () {
-    return view('reset-password');
+    return view('profile.edit');
 })->name('perfil');
 
+//usuarios
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// RUTAS PARA USUARIOS
-
-    Route::get('usuarios/nuevo', [UsuarioController::class, 'create'])->name('vista_nuevo_usuario');
-
-// RUTAS PARA MATERIALES
 
 
+
+
+//usuarios
+
+Route::get('/usuarios/nuevo', [UsuarioController::class, 'create'])->name('vista_nuevo_usuario');
 
 require __DIR__ . '/auth.php';
