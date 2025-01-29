@@ -28,7 +28,23 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $usuario = new usuario();
+
+        $usuario->nombres = $request->nombres;
+        $usuario->apellidos = $request->apellidos;
+        $usuario->rut = $request->rut;
+        $usuario->fnac = $request->fnac;
+        $usuario->telefono = $request->telefono;
+        $usuario->email = $request->email;
+        $usuario->registrosocial = $request->registrosocial;
+        $usuario->porcentaje = $request->porcentaje;
+        $usuario->grupofam = $request->grupofam;
+        $usuario->direccion = $request->direccion;
+        $usuario->sector = $request->sector;
+
+        $usuario->save();
+
+        return redirect()->route('vista_nuevo_usuario');
     }
 
     /**
