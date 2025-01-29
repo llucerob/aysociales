@@ -3,7 +3,12 @@
 @section('title', 'Forgot Password')
 
 @section('css')
+
+<!-- Incluye jQuery desde una CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection
+
+
 
 @section('main_content')
     <!-- loader starts-->
@@ -24,7 +29,7 @@
     <!-- tap on tap ends-->
     <!-- page-wrapper Start-->
     <div class="page-wrapper">
-        <div class="container-fluid p-0">
+        <div class="p-0 container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="login-card login-dark">
@@ -53,8 +58,8 @@
                                     </div>
 
 
-                                    <div class="form-group mb-0">
-                                        <button class="btn btn-primary btn-block w-100 mt-3 mb-2" type="submit">Send Password Reset Link </button>
+                                    <div class="mb-0 form-group">
+                                        <button class="mt-3 mb-2 btn btn-primary btn-block w-100" type="submit">Send Password Reset Link </button>
                                     </div>
                                 </form>
                                 <a href="{{ route('login') }}" class="text-center">
