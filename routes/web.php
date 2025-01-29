@@ -32,6 +32,7 @@ Route::get('/profile', function () {
     return view('profile.edit');
 })->name('perfil');
 
+
 //users
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -44,7 +45,20 @@ Route::middleware('auth')->group(function () {
 
 //usuarios
 
-Route::get('/usuarios/nuevo', [UsuarioController::class, 'create'])->name('vista_nuevo_usuario');
+Route::get('/usuarios/nuevo', function () {
+    return view('welcome');
+});
+
+
+
+Route::get('usuarios/nuevo', [UsuarioController::class, 'create'])->name('vista_nuevo_usuario');
+Route::post('usuarios/nuevo', [UsuarioController::class, 'store'])->name('usuario.store');
+
+
+Route::get('/usuarios/nuevo', function () {
+    return view('usuarios.nuevo-usuario');
+});
+
 
 
 

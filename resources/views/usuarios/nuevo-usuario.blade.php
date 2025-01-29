@@ -1,41 +1,41 @@
 @extends('layouts.master')
 
-@section('title', 'Nuevo Beneficiario - I. Municipalidad Coinco')
+@section('title', 'Nuevo Usuario - I. Municipalidad Coinco')
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/date-picker.css')}}">
-    
+
 @endsection
 
 @section('style')
-    
+
 @endsection
 
 @section('breadcrumb-title')
-    <h3>Crear Nuevo Beneficiario</h3>
+    <h3>Crear Nuevo Usuario</h3>
 @endsection
 
 @section('breadcrumb-items')
-    <li class="breadcrumb-item">Beneficiarios</li>
+    <li class="breadcrumb-item">Usuario</li>
     <li class="breadcrumb-item active">Nuevo</li>
-   
+
 @endsection
 
 @section('content')
 <div class="container-fluid">
     <div class="row starter-main">
-       
-        
+
+
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>A continuación usted creara un nuevo beneficiario.</h5>
-                    
-                </div>
-                
+                    <h5>A continuación usted creara un nuevo Usuario.</h5>
 
-                    <form class="needs-validation theme-form" novalidate="" onsubmit="enviar();" action="{{ route('beneficiarios.store')}}" method="post" enctype="multipart/form-data">
-                      @csrf  
+                </div>
+
+
+                    <form class="needs-validation theme-form" novalidate="" onsubmit="enviar();" action="{{ route('usuario.store')}}" method="post" enctype="multipart/form-data">
+                      @csrf
                       <div class="card-body">
                           <div class="row g-3">
 
@@ -56,7 +56,7 @@
                             </div>
 
                           </div>
-                          
+
 
 
                           <div class="row g-3">
@@ -78,7 +78,7 @@
                               </div>
 
                           </div>
-                          
+
                           <div class="row g-3">
 
                             <div class="col-md-4">
@@ -124,7 +124,7 @@
                                     @foreach ($sector as $s )
                                         <option value="{{ $s->nombre }}">{{ $s->nombre }}</option>
                                     @endforeach
-                                  
+
                                 </select>
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
@@ -160,29 +160,29 @@
 
 
                           </div>
-                          
-                          
+
+
                         </div>
                         <div class="card-footer text-end">
                           <button class="btn btn-primary" id="btn" type="submit">Grabar</button>
                           <input class="btn btn-light" type="reset" value="Cancel">
                         </div>
                       </form>
-                    
-                   
-                
+
+
+
             </div>
         </div>
-        
-        
-        
+
+
+
     </div>
 </div>
 
 <script type="text/javascript">
     var session_layout = '{{ session()->get('layout') }}';
 </script>
-   
+
 @endsection
 
 @section('script')
@@ -193,12 +193,12 @@
       function enviar(){
       var btn = document.getElementById('btn');
       btn.setAttribute('disabled','');
-     
+
     }
     </script>
     <script>
-    
-        
+
+
         (function($) {
         "use strict";
          //Minimum and Maxium Date
@@ -223,6 +223,6 @@
             }
         })
         })(jQuery);
-    
+
     </script>
 @endsection
