@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('reembolsos', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('usuarios_id')
+            $table->foreignId('usuario_id')
                     ->constrained('usuarios')
                     ->onDelete('cascade');
             $table->integer('cantidad')->default('0');

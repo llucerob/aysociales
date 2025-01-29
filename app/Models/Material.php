@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Material extends Model
 {
     use HasFactory;
-    protected $table = 'Material';
+    protected $table = 'materiales';
 
     public function categoria():BelongsTo
     {

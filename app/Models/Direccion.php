@@ -10,11 +10,17 @@ class Direccion extends Model
 {
     use HasFactory;
 
-    protected $table = 'Direccion';
+    protected $table = 'direcciones';
 
-    public function direccion():BelongsTo
+
+    /**
+     * Get the user thuario owns the Direccion
+     *
+     * @return \Illuminate\DatabasuarioEloquent\Relations\BelongsTo
+     */
+    public function usuario(): BelongsTo
     {
-        return $this->belongsTo(usuario::class, 'usuario_id','id');
+        return $this->belongsTo(Usuario::class, 'usuario_id', 'id');
     }
 
     protected $casts = [

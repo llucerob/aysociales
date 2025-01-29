@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Situacion extends Model
 {
     use HasFactory;
-    protected $table = 'Situacion';
+    protected $table = 'situaciones';
 
 
 
-    public function situacion ():BelongsTo
+    public function usuario(): BelongsTo
     {
-        return $this->belongsTo(User::class,'usuario_id');
+        return $this->belongsTo(Usuario::class,'usuario_id', 'id');
 
     }
 }

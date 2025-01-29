@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('rut');
             $table->string('nombres');
             $table->string('apellidos');
-            $table->foreignId('registros_sociales_id')
+            $table->foreignId('registro_social_id')
                     ->constrained('registros_sociales')
                     ->onDelete('cascade');
             

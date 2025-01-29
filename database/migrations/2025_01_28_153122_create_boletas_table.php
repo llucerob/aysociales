@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('situaciones', function (Blueprint $table) {
+        Schema::create('boletas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
-            $table->enum('tipo', ['familiar', 'salud', 'profesional'])->default('profesional');
-            $table->text('comentario');
-            $table->string('profesional');
+            $table->foreignId('reembolso_id')->constrained('reembolsos')->onDelete('cascade');
+            $table->string('concepto');
+            $table->string('url');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('situaciones');
+        Schema::dropIfExists('boletas');
     }
 };

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('historial_entregas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('materiales_id')
+            $table->foreignId('material_id')
                     ->constrained('materiales')
                     ->onDelete('cascade');
             $table->foreignId('usuario_id')

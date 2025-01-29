@@ -10,11 +10,11 @@ class CuentaBancaria extends Model
 {
     use HasFactory;
 
-    protected $table = 'CuentaBancaria';
+    protected $table = 'cuentas_bancarias';
 
     public function cuenta():BelongsTo
     {
-        return $this->belongsTo(Usuario::class, 'Usuario_id','id');
+        return $this->belongsTo(Usuario::class, 'usuario_id','id');
     }
 }
 
