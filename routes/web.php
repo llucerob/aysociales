@@ -32,7 +32,7 @@ Route::get('/profile', function () {
     return view('profile.edit');
 })->name('perfil');
 
-//usuarios
+//users
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -45,5 +45,9 @@ Route::middleware('auth')->group(function () {
 //usuarios
 
 Route::get('/usuarios/nuevo', [UsuarioController::class, 'create'])->name('vista_nuevo_usuario');
+
+
+
+//materiales
 
 require __DIR__ . '/auth.php';
