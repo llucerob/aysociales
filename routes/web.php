@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\UtilsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,5 +50,11 @@ Route::get('/usuarios/nuevo', [UsuarioController::class, 'create'])->name('vista
 
 
 //materiales
+
+
+//rutas de utilidades (medidas, sectores, etc)
+Route::get('utils/sectores', [UtilsController::class, 'listarsectores'])->name('sectores.listar'); 
+Route::post('uitls/sectores/store', [UtilsController::class, 'storesector'])->name('sectores.store');
+Route::get('utils/sectores/destroy/{id}', [UtilsController::class, 'destroysector'])->name('sectores.destroy');  
 
 require __DIR__ . '/auth.php';
