@@ -44,31 +44,25 @@ Route::middleware('auth')->group(function () {
 
 
 
-//usuarios
-
-Route::get('/usuarios/nuevo', function () {
-    return view('welcome');
-});
 
 
 
-Route::get('usuarios/nuevo', [UsuarioController::class, 'create'])->name('vista_nuevo_usuario');
-Route::post('usuarios/nuevo', [UsuarioController::class, 'store'])->name('usuario.store');
 
+Route::get('usuarios/nuevo', [UsuarioController::class, 'create'])->name('usuarios.nuevo');
 
-Route::get('/usuarios/nuevo', function () {
-    return view('usuarios.nuevo-usuario');
-});
-
-
+Route::post('usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
+Route::post('usuarios/{usuario}/fallecer', [UsuarioController::class, 'marcarFallecido'])->name('usuario.fallecer');
+Route::post('usuarios/{usuario}/modificar-porcentaje', [UsuarioController::class, 'modificarPorcentaje'])->name('porcentaje.modificar');
+Route::get('usuarios/listar', [UsuarioController::class, 'getUsuariosData'])->name('datatable.usuarios');
+//ddddddddddddddddddddd
 
 
 //materiales
 
 
 //rutas de utilidades (medidas, sectores, etc)
-Route::get('utils/sectores', [UtilsController::class, 'listarsectores'])->name('sectores.listar'); 
+Route::get('utils/sectores', [UtilsController::class, 'listarsectores'])->name('sectores.listar');
 Route::post('uitls/sectores/store', [UtilsController::class, 'storesector'])->name('sectores.store');
-Route::get('utils/sectores/destroy/{id}', [UtilsController::class, 'destroysector'])->name('sectores.destroy');  
+Route::get('utils/sectores/destroy/{id}', [UtilsController::class, 'destroysector'])->name('sectores.destroy');
 
 require __DIR__ . '/auth.php';

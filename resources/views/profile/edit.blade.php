@@ -28,7 +28,7 @@
                     <div class="user-profile">
                         <div class="row"><!-- user profile first-style start-->
                             <div class="col-sm-12">
-                                <div class="card hovercard text-center common-user-image">
+                                <div class="text-center card hovercard common-user-image">
                                     <div class="cardheader">
                                         <div class="user-image">
                                             <div class="avatar">
@@ -98,7 +98,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 col-md-4 col-sm-6">
-                                                <div class="ttl-info text-start pb-0">
+                                                <div class="pb-0 ttl-info text-start">
                                                     <h6><i class="fa-solid fa-location-arrow pe-2"></i>Location</h6>
                                                     <span>B69 Libby Street Beverly Hills</span>
                                                 </div>
@@ -209,7 +209,7 @@
                                                                             <div class="activity-dot-primary"></div>
                                                                             <div class="w-100 ms-3">
                                                                                 <p
-                                                                                    class="d-flex justify-content-between mb-2">
+                                                                                    class="mb-2 d-flex justify-content-between">
                                                                                     <span
                                                                                         class="date-content light-background">12th
                                                                                         Feb, 2024
@@ -230,7 +230,7 @@
                                                                             <div class="activity-dot-warning"></div>
                                                                             <div class="w-100 ms-3">
                                                                                 <p
-                                                                                    class="d-flex justify-content-between mb-2">
+                                                                                    class="mb-2 d-flex justify-content-between">
                                                                                     <span
                                                                                         class="date-content light-background">12th
                                                                                         Feb, 2024 </span><span>02:00
@@ -296,7 +296,7 @@
                                                                             <div class="activity-dot-primary"></div>
                                                                             <div class="w-100 ms-3">
                                                                                 <p
-                                                                                    class="d-flex justify-content-between mb-2">
+                                                                                    class="mb-2 d-flex justify-content-between">
                                                                                     <span
                                                                                         class="date-content light-background">08th
                                                                                         Feb, 2024 </span><span>5 days
@@ -321,14 +321,14 @@
                                                                             <div class="activity-dot-warning"></div>
                                                                             <div class="w-100 ms-3">
                                                                                 <p
-                                                                                    class="d-flex justify-content-between mb-2">
+                                                                                    class="mb-2 d-flex justify-content-between">
                                                                                     <span
                                                                                         class="date-content light-background">05th
                                                                                         Feb, 2024 </span><span>8 days
                                                                                         ago</span></p>
                                                                                 <h6>Wireframing Designs<span
                                                                                         class="dot-notification"></span>
-                                                                                </h6><span class="c-o-light mb-1">Any
+                                                                                </h6><span class="mb-1 c-o-light">Any
                                                                                     type of group project could have a
                                                                                     central idea. Transfer information
                                                                                     using the theme so that members of
@@ -829,7 +829,7 @@
                                                             <div class="card-body setting-wrapper">
                                                                 <div class="row g-md-3 g-2">
                                                                     <div class="col-md-3"><label
-                                                                            class="form-label mb-0">Reminders</label>
+                                                                            class="mb-0 form-label">Reminders</label>
                                                                     </div>
                                                                     <div class="col-sm-9">
                                                                         <div
@@ -846,7 +846,7 @@
                                                                 </div>
                                                                 <div class="row g-md-3 g-2">
                                                                     <div class="col-md-3"><label
-                                                                            class="form-label mb-0">Select
+                                                                            class="mb-0 form-label">Select
                                                                             Language</label></div>
                                                                     <div class="col-sm-9"><select class="form-select">
                                                                             <option selected="">Select your language
@@ -862,7 +862,7 @@
                                                                 </div>
                                                                 <div class="row g-md-3 g-2">
                                                                     <div class="col-md-3"><label
-                                                                            class="form-label mb-0">Recent Activity
+                                                                            class="mb-0 form-label">Recent Activity
                                                                         </label></div>
                                                                     <div class="col-md-9">
                                                                         <div
@@ -878,7 +878,7 @@
                                                                 </div>
                                                                 <div class="row g-md-3 g-2">
                                                                     <div class="col-md-3"><label
-                                                                            class="form-label mb-0">Two-factor
+                                                                            class="mb-0 form-label">Two-factor
                                                                             Authentications</label></div>
                                                                     <div class="col-md-9">
                                                                         <div
@@ -895,7 +895,7 @@
                                                                 </div>
                                                                 <div class="row g-md-3 g-2">
                                                                     <div class="col-md-3"><label
-                                                                            class="form-label mb-0">Post
+                                                                            class="mb-0 form-label">Post
                                                                             Notifications</label></div>
                                                                     <div class="col-md-9">
                                                                         <div
@@ -912,7 +912,7 @@
                                                                 </div>
                                                                 <div class="row g-md-3 g-2">
                                                                     <div class="col-md-3"><label
-                                                                            class="form-label mb-0">Remove
+                                                                            class="mb-0 form-label">Remove
                                                                             Accounts</label></div>
                                                                     <div class="col-md-9">
                                                                         <div
@@ -925,7 +925,7 @@
                                                                                 remove your account and all related
                                                                                 information from the platform.</p>
                                                                         </div>
-                                                                        <div class="common-flex mt-3"><a
+                                                                        <div class="mt-3 common-flex"><a
                                                                                 class="btn button-light-danger disabled"
                                                                                 href="#!" role="button">Disable
                                                                                 Account</a><a class="btn btn-danger"

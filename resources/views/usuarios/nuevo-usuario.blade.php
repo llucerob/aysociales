@@ -34,7 +34,7 @@
                 </div>
 
 
-                    <form class="needs-validation theme-form" novalidate="" onsubmit="enviar();" action="{{ route('usuario.store')}}" method="post" enctype="multipart/form-data">
+                    <form class="needs-validation theme-form" novalidate="" onsubmit="enviar();" action="{{ route('usuarios.store')}}" method="post" enctype="multipart/form-data">
                       @csrf
                       <div class="card-body">
                           <div class="row g-3">
@@ -84,7 +84,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                   <label class="form-label" for="inputRegistrosocial">Registro Social</label>
-                                  <input class="form-control" id="inputRegistrosocial" type="text" required name="registrosocial" placeholder="1252831">
+                                  <input class="form-control" id="inputRegistrosocial" type="text" required name="registro_social[folioid]" placeholder="1252831">
                                   <div class="valid-feedback">¡Luce bien!</div>
                                 </div>
                             </div>
@@ -92,14 +92,14 @@
                             <div class="col-md-4">
                               <div class="mb-3">
                                 <label class="form-label" for="inputPorcentaje">Porcentaje</label>
-                                <input class="form-control" id="inputPorcentaje" type="number" name="porcentaje" required placeholder="99">
+                                <input class="form-control" id="inputPorcentaje" type="number" name="registro_social[porcentaje]" required placeholder="99">
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="mb-3">
                                 <label class="form-label" for="inputgrupofam">Grupo Familiar</label>
-                                <input class="form-control" id="inputgrupofam" type="number" name="grupofam" required placeholder="99">
+                                <input class="form-control" id="inputgrupofam" type="number" name="registro_social[grupo_familiar]" required placeholder="99">
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
                             </div>
@@ -121,8 +121,8 @@
                                 <label class="form-label" for="selectSector">Sector</label>
                                 <select class="form-select digits" required id="selectSector" name="sector">
 
-                                    @foreach ($sector as $s )
-                                        <option value="{{ $s->nombre }}">{{ $s->nombre }}</option>
+                                    @foreach ($sectores as $sector )
+                                        <option value="{{ $sector->nombre }}">{{ $sector->nombre }}</option>
                                     @endforeach
 
                                 </select>

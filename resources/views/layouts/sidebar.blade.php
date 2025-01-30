@@ -11,8 +11,8 @@
           <ul class="sidebar-links" id="simple-bar">
             <li class="back-btn">
               <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
-            </li>           
-            <li class="sidebar-list pt-4 mt-2"><a class="sidebar-link sidebar-title mt-3" href="{{route('dashboard')}}" >
+            </li>
+            <li class="pt-4 mt-2 sidebar-list"><a class="mt-3 sidebar-link sidebar-title" href="{{route('dashboard')}}" >
                 <svg class="stroke-icon">
                   <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-home') }}"></use>
                 </svg>
@@ -21,7 +21,7 @@
                 </svg><span>Escritorio</span></a></li>
 
                 <li class="pin-title sidebar-main-title">
-                  <div> 
+                  <div>
                     <h6>Social</h6>
                   </div>
                 </li>
@@ -34,20 +34,20 @@
                   <use href="{{ asset('assets/svg/icon-sprite.svg#fill-user') }}"></use>
                 </svg><span>Usuarios</span></a>
                 <ul class="sidebar-submenu" style="display: block;">
-                <li><a href="{{url('usuarios/listar')}}">Listar Usuarios</a>
+                <li><a href="{{ route('datatable.usuarios') }}">Listar Usuarios</a></li>
                 </li>
-                <li><a href="{{route('vista_nuevo_usuario')}}">Nuevo Usuario</a>
+                <li><a href="{{ route('usuarios.nuevo') }}">Nuevo Usuario</a></li>
                 </li></ul>
               </li>
-            
-              
+
+
             <li class="pin-title sidebar-main-title">
-                  <div> 
+                  <div>
                     <h6>Reembolsos</h6>
                   </div>
                 </li>
 
-            
+
             <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
                   <svg class="stroke-icon">
                     <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
@@ -76,12 +76,12 @@
 
 
             <li class="pin-title sidebar-main-title">
-                    <div> 
+                    <div>
                       <h6>Transparencia</h6>
                     </div>
             </li>
 
-           
+
               <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
                 <svg class="stroke-icon">
                   <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
@@ -93,7 +93,7 @@
 
 
               <li class="pin-title sidebar-main-title">
-                <div> 
+                <div>
                   <h6>Municipal</h6>
                 </div>
               </li>
@@ -107,15 +107,15 @@
                 </svg><span>Solicitud Municipal</span></a>
                 <ul class="sidebar-submenu">
                   <li><a href="">Listar Solicitudes</a></li>
-                  
-                 
+
+
                 </ul>
             </li>
 
 
 
             <li class="pin-title sidebar-main-title">
-                  <div> 
+                  <div>
                     <h6>Bodega</h6>
                   </div>
                 </li>
@@ -129,12 +129,12 @@
                 </svg><span>Materiales</span></a>
               <ul class="sidebar-submenu">
                 <li><a href="">Listar Material</a></li>
-                
+
               </ul>
               </li>
 
               <li class="pin-title sidebar-main-title">
-                <div> 
+                <div>
                   <h6>Utilidades</h6>
                 </div>
               </li>
@@ -148,13 +148,13 @@
                   </svg><span>Más</span></a>
                   <ul class="sidebar-submenu">
                     <li><a href="">Medidas</a></li>
-                    
+
                   </ul>
               </li>
 
-            
-            
-             
+
+
+
 
 
 
