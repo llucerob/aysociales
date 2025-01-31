@@ -9,13 +9,15 @@ use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Log;
 use App\Models\RegistroSocial;
 
+use Illuminate\Database\Eloquent\Builder;
+
 class UsuarioController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('usuarios.listar-usuario');  // Aquí se carga la vista que contiene la tabla
-    }
 
+        return view('usuarios.listar-usuario'); // Asegúrate de que la vista sea la correcta
+    }
 
 
 
@@ -51,7 +53,7 @@ class UsuarioController extends Controller
         $usuario->save();
 
         // Redirige con un mensaje de éxito
-        return redirect()->route('usuarios.listar')->with('success', 'Usuario y Registro Social creados correctamente.');
+        return redirect()->route('usuarios.listar-usuario')->with('success', 'Usuario y Registro Social creados correctamente.');
     }
 
 
@@ -64,7 +66,7 @@ class UsuarioController extends Controller
         $usuario->fallecido = true;
         $usuario->save();
 
-        return redirect()->route('usuarios.listar')->with('success', 'Usuario marcado como fallecido.');
+        return redirect()->route('usuarios.listar-usuario')->with('success', 'Usuario marcado como fallecido.');
     }
 
 
@@ -90,18 +92,20 @@ class UsuarioController extends Controller
         // Seleccionamos los campos que queremos mostrar en la tabla
         $usuarios = Usuario::select(['id', 'rut', 'nombres', 'telefono', 'correo']);
 
-        // Utilizamos DataTables para preparar la respuesta con los datos y las columnas adicionales (acciones)
+
         return DataTables::of($usuarios)
-            ->addColumn('acciones', function ($usuario) {
-                // Creamos el HTML con los botones de acción para cada usuario
-                return '<button class="m-1 btn imprimir btn-secondary btn-sm" title="imprimir"><i class="fa fa-file-pdf-o"></i></button>
-                        <button class="m-1 btn devolucion btn-info btn-sm" title="Solicitar Devolución" data-bs-toggle="modal" data-bs-target="#modalDevolucion"><i class="fa fa-money"></i></button>
-                        <button class="m-1 btn aumentar btn-success btn-sm" title="Modificar %" data-bs-toggle="modal" data-bs-target="#modalAumentar"><i class="fa fa-plus"></i></button>
-                        <button class="m-1 btn btn-warning btn-sm editar" title="ver ficha"><i class="fa fa-book"></i></button>
-                        <button class="m-1 btn btn-danger fallecido btn-sm" title="Marcar como fallecido" data-bs-toggle="modal" data-bs-target="#modalFallecido"><i class="icofont icofont-skull-face"></i></button>';
-            })
-            ->rawColumns(['acciones'])  // Especificamos que el campo 'acciones' es HTML, por lo que debe ser procesado como tal.
-            ->make(true);  // Retorna los datos en formato JSON para ser utilizados por DataTables
+
+            // ->addColumn('acciones', function ($usuario) {
+
+            //     // Creamos el HTML con los botones de acción para cada usuario
+            //     return '<button class="m-1 btn imprimir btn-secondary btn-sm" title="imprimir"><i class="fa fa-file-pdf-o"></i></button>
+            //         <button class="m-1 btn devolucion btn-info btn-sm" title="Solicitar Devolución" data-bs-toggle="modal" data-bs-target="#modalDevolucion"><i class="fa fa-money"></i></button>
+            //         <button class="m-1 btn aumentar btn-success btn-sm" title="Modificar %" data-bs-toggle="modal" data-bs-target="#modalAumentar"><i class="fa fa-plus"></i></button>
+            //         <button class="m-1 btn btn-warning btn-sm editar" title="ver ficha"><i class="fa fa-book"></i></button>
+            //         <button class="m-1 btn btn-danger fallecido btn-sm" title="Marcar como fallecido" data-bs-toggle="modal" data-bs-target="#modalFallecido"><i class="icofont icofont-skull-face"></i></button>';
+            // })
+            // ->rawColumns(['acciones'])  // Especificamos que el campo 'acciones' es HTML, por lo que debe ser procesado como tal.
+            ->make(true);
     }
 
 

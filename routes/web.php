@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\UtilsController;
+use App\Http\Controllers\DecretoController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Database\Eloquent\Builder;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,15 +48,24 @@ Route::middleware('auth')->group(function () {
 
 
 
-
+//Usuarios
 
 Route::get('usuarios/nuevo', [UsuarioController::class, 'create'])->name('usuarios.nuevo');
+
+// Ruta que carga la vista con la tabla
+
+// Ruta que obtiene los datos de los usuarios en formato JSON
+Route::get('usuarios/listar', [UsuarioController::class, 'index'])->name('usuarios.listar');
+Route::get('usuarios/data', [UsuarioController::class, 'getUsuariosData'])->name('usuarios.data');
+
+
 
 Route::post('usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
 Route::post('usuarios/{usuario}/fallecer', [UsuarioController::class, 'marcarFallecido'])->name('usuario.fallecer');
 Route::post('usuarios/{usuario}/modificar-porcentaje', [UsuarioController::class, 'modificarPorcentaje'])->name('porcentaje.modificar');
-Route::get('usuarios/listar', [UsuarioController::class, 'getUsuariosData'])->name('datatable.usuarios');
-//ddddddddddddddddddddd
+
+//decretos
+Route::get('/decretos', [DecretoController::class, 'create'])->name('decretos.nuevo');
 
 
 //materiales

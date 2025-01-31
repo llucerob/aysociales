@@ -34,7 +34,7 @@
                   <use href="{{ asset('assets/svg/icon-sprite.svg#fill-user') }}"></use>
                 </svg><span>Usuarios</span></a>
                 <ul class="sidebar-submenu" style="display: block;">
-                <li><a href="{{ route('datatable.usuarios') }}">Listar Usuarios</a></li>
+                <li><a href="{{ route('usuarios.listar') }}">Listar Usuarios</a></li>
                 </li>
                 <li><a href="{{ route('usuarios.nuevo') }}">Nuevo Usuario</a></li>
                 </li></ul>
@@ -82,13 +82,17 @@
             </li>
 
 
-              <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
-                <svg class="stroke-icon">
-                  <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
-                </svg>
-                <svg class="fill-icon">
-                  <use href="{{ asset('assets/svg/icon-sprite.svg#fill-charts') }}"></use>
-                </svg><span>Crear Decreto</span></a></li>
+            <li class="sidebar-list">
+                <a class="sidebar-link sidebar-title" href="{{ route('decretos.nuevo') }}">
+                    <svg class="stroke-icon">
+                        <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
+                    </svg>
+                    <svg class="fill-icon">
+                        <use href="{{ asset('assets/svg/icon-sprite.svg#fill-charts') }}"></use>
+                    </svg>
+                    <span>Crear Decreto</span>
+                </a>
+            </li>
 
 
 
