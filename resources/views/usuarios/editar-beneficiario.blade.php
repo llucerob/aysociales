@@ -8,7 +8,7 @@
 @endsection
 
 @section('style')
-    
+
 @endsection
 
 @section('breadcrumb-title')
@@ -18,26 +18,26 @@
 @section('breadcrumb-items')
     <li class="breadcrumb-item">Beneficiarios</li>
     <li class="breadcrumb-item active">Ficha</li>
-   
+
 @endsection
 
 @section('content')
 <div class="container-fluid">
     <div class="row starter-main">
-       
-        
+
+
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
                     <h5>Datos Personales</h5>
-                    
+
                 </div>
 
 
-                
+
 
                     <form class="needs-validation theme-form" novalidate="" action="{{ route('beneficiarios.update', [$beneficiario->id])}}" method="post" enctype="multipart/form-data">
-                      @csrf  
+                      @csrf
                       <div class="card-body">
                           <div class="row g-3">
 
@@ -58,7 +58,7 @@
                             </div>
 
                           </div>
-                          
+
 
 
                           <div class="row g-3">
@@ -80,15 +80,15 @@
                               </div>
 
                           </div>
-                          
+
                           <div class="row g-3">
 
                             <div class="col-md-3 mt-3">
                               <div class="mb-3">
                                 <label class="col-form-label m-r-10 form-label" for="registro">¿Desea modificar el Nº de registro social?
-                                
-                                 
-                                <div class="media-body text-end text-center" >
+
+
+                                <div class="media-body text-end "></div>
                                   <label class="switch">
                                   <input type="checkbox" onchange="cambio();" id="registro" name="registro"><span class="switch-state"></span>
                                   </label>
@@ -141,7 +141,7 @@
                                     @foreach ($sector as $s )
                                         <option value="{{ $s->nombre }}" @if ($s->nombre == $beneficiario->sector) selected @endif>{{ $s->nombre }}</option>
                                     @endforeach
-                                  
+
                                 </select>
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
@@ -178,13 +178,13 @@
 
                           </div>
 
-                          
-                          
-                          
+
+
+
                         </div>
 
-                        
-                  
+
+
 
 
 
@@ -197,9 +197,9 @@
                           <input class="btn btn-light" type="reset" value="Cancel">
                         </div>
                       </form>
-                    
-                   
-                
+
+
+
             </div>
         </div>
 
@@ -210,17 +210,17 @@
           <div class="card card-no-border">
             <div class="card-header ">
                 <h5>Menú</h5>
-                
+
             </div>
-            
-            
+
+
             <div class="card-body pt-3">
               <a class="btn ver btn-dark btn-sm m-1" href="{{route('ver.pedidos', [$beneficiario->id])}}" title="Ver"><i class="fa fa-eye"></i></a>
-              
+
               <a  class="btn solicitar btn-primary btn-sm m-1" title="Solicitar Material" href="{{route('beneficiarios.solicitar', [$beneficiario->id] )}}"><i class="fa fa-ticket"></i></a>
               <a  class="btn btn-warning btn-sm m-1" title="Crear Pdf" href="{{route('crearfichainterna', [$beneficiario->id])}}"><i class="fa fa-file-pdf-o"></i></a>
               <button data-bs-toggle="modal" data-bs-target="#modalSituacion" title="Ingresar Situaciones" class="btn btn-danger btn-sm m-1"><i class="fa fa-plus"></i></button>
-             
+
 
               <div class="modal fade" id="modalSituacion" tabindex="-1" role="dialog" aria-labelledby="modalSituacion" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -231,14 +231,14 @@
                             <h5 class="modal-title">Ingrese un nuevo hito</h5>
                         <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    
-                        <div class="modal-body"> 
-                            <div class="modal-toggle-wrapper">  
 
-                              
-    
-                                
-    
+                        <div class="modal-body">
+                            <div class="modal-toggle-wrapper">
+
+
+
+
+
                                 <div class="col">
                                     <div class="mb-3">
                                       <label class="form-label" for="tipo">Tipo</label>
@@ -253,42 +253,42 @@
                                     <div class="mb-3">
                                       <label class="form-label" for="comentario">Mensaje</label>
                                       <textarea name="comentario" class="form-control" id="mensaje" cols="10" rows="10"></textarea>
-                                      
+
                                     </div>
                                 </div>
-                                
-                                
-                               
-                               
-                              
-                                                                    
+
+
+
+
+
+
                             </div>
-                        </div>  
-    
+                        </div>
+
                         <div class="modal-footer">
                             <button type="submit" data-dismiss="modal" class="btn btn-primary">Agregar</button>
                         </div>
-                        
-                        
-                        </form>                                              
-                        
+
+
+                        </form>
+
                     </div>
                 </div>
             </div>
-  
-            </div>      
-           
+
+            </div>
+
         </div>
-          
+
           <div class="card height-equal card-no-border">
               <div class="card-header ">
                   <h5>Historial Situaciones </h5>
-                  
+
               </div>
               <div class="card-body pt-3">
-                <ul style="padding-left:0px !important;"> 
-              
-              
+                <ul style="padding-left:0px !important;">
+
+
                   @foreach($beneficiario->situaciones as $sit)
 
                     <li class="d-flex">
@@ -301,30 +301,30 @@
                     </li>
 
                   @endforeach
-              
 
-              
-              
+
+
+
             </ul>
-          </div> 
-                    
-          
-          
+          </div>
+
+
+
           </div>
         </div>
-        
 
-              
-        
-        
-        
+
+
+
+
+
     </div>
 </div>
 
 <script type="text/javascript">
     var session_layout = '{{ session()->get('layout') }}';
 </script>
-   
+
 @endsection
 
 @section('script')
@@ -337,7 +337,7 @@
 
 
     <script>
-      
+
       function cambio()
       {
         if(document.getElementById("registro").checked){
@@ -345,11 +345,11 @@
           document.getElementById('inputRegistrosocial').readOnly = false;
         }
       }
-      
-    </script>   
+
+    </script>
     <script src="{{ asset('assets/js/form-validation-custom.js')}}"></script>
     <script src="{{ asset('assets/js/datepicker/date-picker/datepicker.js')}}"></script>
     <script src="{{ asset('assets/js/datepicker/date-picker/datepicker.es.js')}}"></script>
     <script src="{{ asset('assets/js/datepicker/date-picker/datepicker.custom.js')}}"></script>
-    
+
 @endsection

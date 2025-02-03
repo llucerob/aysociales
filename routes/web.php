@@ -52,10 +52,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('usuarios/nuevo', [UsuarioController::class, 'create'])->name('usuarios.nuevo');
 
-// Ruta que carga la vista con la tabla
-
-// Ruta que obtiene los datos de los usuarios en formato JSON
 Route::get('usuarios/listar', [UsuarioController::class, 'index'])->name('usuarios.listar');
+
 Route::get('usuarios/data', [UsuarioController::class, 'getUsuariosData'])->name('usuarios.data');
 
 

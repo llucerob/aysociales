@@ -64,7 +64,7 @@
                             <div class="col-md-6">
                               <div class="mb-3">
                                 <label class="form-label" for="inputRut">Rut</label>
-                                <input class="form-control" id="inputRut" type="text" required name="rut" placeholder="99999999-1">
+                                <input class="form-control" id="inputRut" type="text" required name="rut" maxlength="11" placeholder="99999999-1">
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
                             </div>
@@ -84,7 +84,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                   <label class="form-label" for="inputRegistrosocial">Registro Social</label>
-                                  <input class="form-control" id="inputRegistrosocial" type="text" required name="registro_social[folioid]" placeholder="1252831">
+                                  <input class="form-control" id="inputRegistrosocial" type="text" required name="registro_social[folioid]" maxlength="7" placeholder="1252831">
                                   <div class="valid-feedback">¡Luce bien!</div>
                                 </div>
                             </div>
@@ -92,14 +92,14 @@
                             <div class="col-md-4">
                               <div class="mb-3">
                                 <label class="form-label" for="inputPorcentaje">Porcentaje</label>
-                                <input class="form-control" id="inputPorcentaje" type="number" name="registro_social[porcentaje]" required placeholder="99">
+                                <input class="form-control" id="inputPorcentaje" type="number" name="registro_social[porcentaje]" min="0" maxlength="2" required placeholder="99" step="1">
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="mb-3">
                                 <label class="form-label" for="inputgrupofam">Grupo Familiar</label>
-                                <input class="form-control" id="inputgrupofam" type="number" name="registro_social[grupo_familiar]" required placeholder="99">
+                                <input class="form-control" id="inputgrupofam" type="number" name="registro_social[grupo_familiar]"maxlength ="2"min="0" required placeholder="99" step="1">
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
                             </div>
@@ -138,7 +138,7 @@
                             <div class="col-md-6">
                               <div class="mb-3">
                                 <label class="form-label" for="inputTelefono">Teléfono</label>
-                                <input class="form-control" id="inputTelefono" type="text"  name="telefono" placeholder="72 2442330">
+                                <input class="form-control" id="inputTelefono" type="text"  name="telefono" maxlength ="9" placeholder="72 2442330">
                                 <div class="valid-feedback">¡Luce bien!</div>
                               </div>
                             </div>
@@ -170,7 +170,6 @@
                       </form>
 
 
-
             </div>
         </div>
 
@@ -189,13 +188,23 @@
     <script src="{{ asset('assets/js/form-validation-custom.js')}}"></script>
     <script src="{{ asset('assets/js/datepicker/date-picker/datepicker.js')}}"></script>
     <script src="{{ asset('assets/js/datepicker/date-picker/datepicker.es.js')}}"></script>
-    <script>
-      function enviar(){
-      var btn = document.getElementById('btn');
-      btn.setAttribute('disabled','');
 
-    }
+    <script>
+        // Función para deshabilitar el botón por 3 segundos
+        function enviar() {
+            var btn = document.getElementById('btn');
+
+            // Deshabilitar el botón
+            btn.setAttribute('disabled', '');
+
+            // Esperar 3 segundos antes de habilitarlo nuevamente
+            setTimeout(function() {
+                // Habilitar el botón nuevamente
+                btn.removeAttribute('disabled');
+            }, 5000); // 3000 milisegundos = 3 segundos
+        }
     </script>
+
     <script>
 
 
@@ -226,3 +235,4 @@
 
     </script>
 @endsection
+
