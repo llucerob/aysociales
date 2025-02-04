@@ -4,7 +4,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\UtilsController;
 use App\Http\Controllers\DecretoController;
+use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\ReembolsoController;
+
+use App\Http\Controllers\SolicitudController;
 use Illuminate\Support\Facades\Route;
+
 use Illuminate\Database\Eloquent\Builder;
 
 /*
@@ -67,11 +72,26 @@ Route::get('/decretos', [DecretoController::class, 'create'])->name('decretos.nu
 
 
 //materiales
-
+Route::get('materiales/listar', [MaterialController::class, 'index'])->name('materiales.vista');
+Route::get('materiales/data', [MaterialController::class, 'getMaterialesdata'])->name('materiales.data');
 
 //rutas de utilidades (medidas, sectores, etc)
 Route::get('utils/sectores', [UtilsController::class, 'listarsectores'])->name('sectores.listar');
 Route::post('uitls/sectores/store', [UtilsController::class, 'storesector'])->name('sectores.store');
 Route::get('utils/sectores/destroy/{id}', [UtilsController::class, 'destroysector'])->name('sectores.destroy');
+
+
+//Reembolsos
+
+Route::get('reembolso/listar', [ReembolsoController::class, 'index'])->name('reembolso.vista');
+Route::get('rembolso/data', [ReembolsoController::class, 'getReembolsoData'])->name('reembolso.data');
+
+//Municipal
+
+Route::get('municipal/listar', [SolicitudController::class, 'index'])->name('muni.listar');
+Route::get('municipal/data', [SolicitudController::class, 'getSolicitudData'])->name('muni.data');
+
+
+
 
 require __DIR__ . '/auth.php';

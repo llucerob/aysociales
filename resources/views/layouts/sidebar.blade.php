@@ -48,14 +48,17 @@
                 </li>
 
 
-            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
-                  <svg class="stroke-icon">
-                    <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
-                  </svg>
-                  <svg class="fill-icon">
-                    <use href="{{ asset('assets/svg/icon-sprite.svg#fill-charts') }}"></use>
-                  </svg><span>Lista Reembolsos</span></a>
-            </li>
+                <li class="sidebar-list">
+                    <a class="sidebar-link sidebar-title" href="{{route('reembolso.vista') }}">
+                        <svg class="stroke-icon">
+                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
+                        </svg>
+                        <svg class="fill-icon">
+                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-charts') }}"></use>
+                        </svg>
+                        Listar Reembolso
+                    </a>
+
 
             <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="">
                     <svg class="stroke-icon">
@@ -110,7 +113,7 @@
                   <use href="{{ asset('assets/svg/icon-sprite.svg#fill-to-do') }}"></use>
                 </svg><span>Solicitud Municipal</span></a>
                 <ul class="sidebar-submenu">
-                  <li><a href="">Listar Solicitudes</a></li>
+                  <li><a href="{{ route('muni.data') }}">Listar Solicitudes</a></li>
 
 
                 </ul>
@@ -132,7 +135,7 @@
                   <use href="{{ asset('assets/svg/icon-sprite.svg#fill-bonus-kit') }}"></use>
                 </svg><span>Materiales</span></a>
               <ul class="sidebar-submenu">
-                <li><a href="">Listar Material</a></li>
+                <li><a href="{{ route('materiales.vista') }}">Listar Material</a></li>
 
               </ul>
               </li>

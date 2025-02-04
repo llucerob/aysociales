@@ -22,6 +22,8 @@ class UsuarioController extends Controller
 
 
 
+
+
     public function create()
     {
         $sectores = Sector::all();
@@ -33,14 +35,11 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $registroSocial = new RegistroSocial();
         $registroSocial->folioid = $request->registro_social['folioid'];
         $registroSocial->porcentaje = $request->registro_social['porcentaje'];
         $registroSocial->grupo_familiar = $request->registro_social['grupo_familiar'];
         $registroSocial->save();
-
 
         $usuario = new usuario();
         $usuario->rut = $request->rut;
@@ -94,24 +93,18 @@ class UsuarioController extends Controller
         $usuarios = Usuario::select(['rut', 'nombres', 'apellidos', 'telefono', 'correo']);
 
         return DataTables::of($usuarios)
-            ->make(true);
-
-        // ->addColumn('acciones', function ($usuario) {
-        //     // Creamos el HTML con los botones de acción para cada usuario
-        //     return '<button class="m-1 btn imprimir btn-secondary btn-sm" title="Imprimir"><i class="fa fa-file-pdf-o"></i></button>
-        //         <button class="m-1 btn devolucion btn-info btn-sm" title="Solicitar Devolución" data-bs-toggle="modal" data-bs-target="#modalDevolucion"><i class="fa fa-money"></i></button>
-        //         <button class="m-1 btn aumentar btn-success btn-sm" title="Modificar %" data-bs-toggle="modal" data-bs-target="#modalAumentar"><i class="fa fa-plus
-        // ->addColumn('acciones', function ($usuario) {
-        //     // Creamos el HTML con los botones de acción para cada usuario
-        //     return '<button class="m-1 btn imprimir btn-secondary btn-sm" title="Imprimir"><i class="fa fa-file-pdf-o"></i></button>
-        //         <button class="m-1 btn devolucion btn-info btn-sm" title="Solicitar Devolución" data-bs-toggle="modal" data-bs-target="#modalDevolucion"><i class="fa fa-money"></i></button>
-        //         <button class="m-1 btn aumentar btn-success btn-sm" title="Modificar %" data-bs-toggle="modal" data-bs-target="#modalAumentar"><i class="fa fa-plus"></i></button>
-        //         <button class="m-1 btn btn-warning btn-sm editar" title="Ver ficha"><i class="fa fa-book"></i></button>
-        //         <button class="m-1 btn btn-danger fallecido btn-sm" title="Marcar como fallecido" data-bs-toggle="modal" data-bs-target="#modalFallecido"><i class="icofont icofont-skull-face"></i></button>';
-        // })
-        // ->rawColumns(['acciones']) // Especificamos que el campo 'acciones' es HTML, por lo que debe ser procesado como tal.
-        // ->make(true); // Esto debe ir al final de la cadena
+            ->addColumn('acciones', function ($usuario) {
+                // Creamos el HTML con los botones de acción para cada usuario
+                return '<button class="m-1 btn imprimir btn-secondary btn-sm" title="Imprimir" data-id="' . $usuario->id . '"><i class="fa fa-file-pdf-o"></i></button>
+                    <button class="m-1 btn devolucion btn-info btn-sm" title="Solicitar Devolución" data-bs-toggle="modal" data-bs-target="#modalDevolucion" data-id="' . $usuario->id . '"><i class="fa fa-money"></i></button>
+                    <button class="m-1 btn aumentar btn-success btn-sm" title="Modificar %" data-bs-toggle="modal" data-bs-target="#modalAumentar" data-id="' . $usuario->id . '"><i class="fa fa-plus"></i></button>
+                    <button class="m-1 btn btn-warning btn-sm editar" title="Ver ficha" data-id="' . $usuario->id . '"><i class="fa fa-book"></i></button>
+                    <button class="m-1 btn btn-danger fallecido btn-sm" title="Marcar como fallecido" data-bs-toggle="modal" data-bs-target="#modalFallecido" data-id="' . $usuario->id . '"><i class="icofont icofont-skull-face"></i></button>';
+            })
+            ->rawColumns(['acciones']) // Especificamos que el campo 'acciones' es HTML, por lo que debe ser procesado como tal.
+            ->make(true); // Esto debe ir al final de la cadena
     }
+
 
 
 

@@ -83,7 +83,7 @@
 		.receipt-main td p:last-child {
 			margin: 0;
 			padding: 0;
-		}	
+		}
 		.receipt-main td h2 {
 			font-size: 20px;
 			font-weight: 900;
@@ -100,7 +100,7 @@
 			margin: 24px 0;
 			overflow: hidden;
 		}
-		
+
 		#container {
 			background-color: #dcdcdc;
 		}
@@ -114,16 +114,16 @@
             <p> </p>
             <p>  </p>
             <p> </p>
-            <p> </p>            	
-        </div>                  
+            <p> </p>
+        </div>
     </td>
    </table>
 
 
    <table class="col-12 receipt-header receipt-header-mid">
     <td>
-        <div class="receipt-right text-left">
-            <p><strong>Nombre : {{$nombre}} {{$apellido}} </strong></p>
+        <div class="text-left receipt-right">
+            <p><strong>Nombre : {{$nombres}} {{$apellidos}} </strong></p>
             <p><b>Rut :</b> {{$rut}}</p>
             <p><b>Dirección :</b> {{$direccion}}, {{$sector}}</p>
             <p><b>Contacto :</b> {{$telefono}} / {{$correo}}</p>
@@ -131,27 +131,27 @@
         </div>
 </td>
     <td>
-        <div class="receipt-right text-left">
+        <div class="text-left receipt-right">
             <p><b>Fecha :</b> {{$fechasolicitud->format('d/m/Y')}}</p>
             <p><b>Atendido :</b>{{ $atendido }} </p>
             <p><b>Retiro :</b> @if($domicilio == 1) Envio a domicilio @else Retiro en local @endif </p>
-            
+
         </div>
     </td>
     <td>
-        <div class="receipt-right mt-3">
+        <div class="mt-3 receipt-right">
             <h4></h4>
-    
+
         </div>
     </td>
    </table>
-   <table class="table table-bordered mt-3">
+   <table class="table mt-3 table-bordered">
     <thead>
         <tr>
             <th>Nombre</th>
             <th>Cantidad</th>
             <th>Observación</th>
-            
+
         </tr>
     </thead>
     <tbody>
@@ -161,10 +161,10 @@
             <td>{{$l['nombre']}}</td>
             <td>{{$l['cantidad']}}{{$l['medida']}}</td>
             <td> </td>
-            
+
         </tr>
         @endforeach
-          
+
     </tbody>
     <tfoot>
         <td colspan="5" class="text-danger">
@@ -172,28 +172,28 @@
         </td>
     </tfoot>
 </table>
-<table class="col-12 receipt-header receipt-header-mid receipt-footer mt-5">
-    
+<table class="mt-5 col-12 receipt-header receipt-header-mid receipt-footer">
+
     <td class="text-left">
         <div class="receipt-right">
             <h5 class="mt-3" style="color: rgb(140, 140, 140);"></h5>
             <hr>
             <p class="text-center">{{$nombre}} {{$apellido}}</p>
             <p class="text-center">{{$rut}}</p>
-           
-            
-           
+
+
+
         </div>
     </td>
     <td>
         <div class="receipt-right">
-            
-            
-            
+
+
+
         </div>
     </td>
     <td>
-        <div class="receipt-left mt-5">
+        <div class="mt-5 receipt-left">
             <h1>www.municoinco.cl</h1>
         </div>
     </div>
@@ -204,8 +204,8 @@
 
 
 </div>
-        
-    
+
+
 
 
 
