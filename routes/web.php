@@ -61,10 +61,17 @@ Route::get('usuarios/listar', [UsuarioController::class, 'index'])->name('usuari
 
 Route::get('usuarios/data', [UsuarioController::class, 'getUsuariosData'])->name('usuarios.data');
 
+Route::get('usuarios/editar', [UsuarioController::class, 'editar'])->name('usuario.update');
+
+
 
 
 Route::post('usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
-Route::post('usuarios/{usuario}/fallecer', [UsuarioController::class, 'marcarFallecido'])->name('usuario.fallecer');
+
+// Route::get('usuarios/editar', [UsuarioController::class, 'Fallecido'])->name('usuario.fallecer');
+
+Route::get('usuarios/editar', [UsuarioController::class, 'editar'])->name('usuario.editar');
+
 Route::post('usuarios/{usuario}/modificar-porcentaje', [UsuarioController::class, 'modificarPorcentaje'])->name('porcentaje.modificar');
 
 //decretos

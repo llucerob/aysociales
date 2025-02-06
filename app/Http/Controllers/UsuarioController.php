@@ -21,6 +21,12 @@ class UsuarioController extends Controller
 
 
 
+    public function show($id)
+    {
+
+        $usuario = Usuario::findOrFail($id);
+        return response()->json($usuario);
+    }
 
 
 
@@ -30,9 +36,26 @@ class UsuarioController extends Controller
         return view('usuarios.nuevo-usuario', compact('sectores'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function editar()
+    {
+
+
+
+        return view('usuarios.editar-beneficiario');
+    }
+
+
+    public function Fallecido(Request $request, $id)
+    {
+
+        $usuario = Usuario::findOrFail($id);
+
+        $usuario->fallecido = $usuario->fallecido == 'F';
+
+        $usuario->save();
+        return response()->json(['fallecido' => $usuario->fallecido]);
+    }
+
     public function store(Request $request)
     {
         $registroSocial = new RegistroSocial();
@@ -54,16 +77,10 @@ class UsuarioController extends Controller
         // Redirige con un mensaje de éxito
         return redirect()->route('usuarios.listar')->with('success', 'Usuario y Registro Social creados correctamente.');
     }
-    //bucar forma de actulizar la lista al agregar un nuevo usuaio
-
-
-
-
-
 
     public function marcarFallecido(Request $request, Usuario $usuario)
     {
-        $usuario->fallecido = true;
+        $usuario->fallecido = 'F';
         $usuario->save();
 
         return redirect()->route('usuarios.listar-usuario')->with('success', 'Usuario marcado como fallecido.');
@@ -90,7 +107,7 @@ class UsuarioController extends Controller
     public function getUsuariosData()
     {
         // Seleccionamos los campos que queremos mostrar en la tabla
-        $usuarios = Usuario::select(['rut', 'nombres', 'apellidos', 'telefono', 'correo']);
+        $usuarios = Usuario::select(['id', 'rut', 'nombres', 'apellidos', 'telefono', 'correo']);
 
         return DataTables::of($usuarios)
             ->addColumn('acciones', function ($usuario) {

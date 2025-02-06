@@ -36,6 +36,6 @@ class DecretoController extends Controller
         // $usuario->save();
 
         // Redirige con un mensaje de éxito
-        return redirect()->route('usuarios.listar')->with('success', 'Usuario y Registro Social creados correctamente.');
+        // return redirect()->route('usuarios.listar')->with('success', 'Usuario y Registro Social creados correctamente.');
     }
 }
