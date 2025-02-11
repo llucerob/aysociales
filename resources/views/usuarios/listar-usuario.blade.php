@@ -74,6 +74,7 @@
                         <button class="m-1 btn btn-secondary imprimir btn-sm" title="Imprimir"><i class="fa fa-file-pdf-o"></i></button>
                         <button class="m-1 btn devolucion btn-info btn-sm" title="Solicitar Devolución" data-bs-toggle="modal" data-bs-target="#modalDevolucion"><i class="fa fa-money"></i></button>
                         <button class="m-1 btn btn-warning btn-sm editar" title="Ver ficha"><i class="fa fa-book"></i></button>
+                        <button class="m-1 btn btn-primary btn-sm solicitudes" title="Ver Solicitudes"><i class="icofont icofont-hand"></i></button>
                         <button class="m-1 btn btn-danger modificar btn-sm" title="Modificar" data-bs-toggle="modal" data-bs-target="#modalModificar"><i class="icofont icofont-law-document"></i></button>
                         `
                     }
@@ -83,7 +84,7 @@
                 }
             });
 
-            //
+            //botones con id
 
             $(document).on('click', 'button.modificar', function() {
                 var data = tabla.row($(this).parents('tr')).data();
@@ -96,6 +97,13 @@
                 var data = tabla.row($(this).parents('tr')).data();
                 var id = data.id;
                 window.location.href = "{{ route('reembolso.nuevo', ['id' => '__id__']) }}".replace(
+                    '__id__',
+                    id);
+            });
+            $(document).on('click', 'button.solicitudes', function() {
+                var data = tabla.row($(this).parents('tr')).data();
+                var id = data.id;
+                window.location.href = "{{ route('usuario.solicitudes', ['id' => '__id__']) }}".replace(
                     '__id__',
                     id);
             });
