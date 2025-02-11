@@ -74,7 +74,7 @@
                         <button class="m-1 btn btn-secondary imprimir btn-sm" title="Imprimir"><i class="fa fa-file-pdf-o"></i></button>
                         <button class="m-1 btn devolucion btn-info btn-sm" title="Solicitar Devolución" data-bs-toggle="modal" data-bs-target="#modalDevolucion"><i class="fa fa-money"></i></button>
                         <button class="m-1 btn btn-warning btn-sm editar" title="Ver ficha"><i class="fa fa-book"></i></button>
-                        <button class="m-1 btn btn-danger modificar btn-sm" title="Modificar" data-bs-toggle="modal" data-bs-target="#modalModificar"><i class="icofont icofont-space-shuttle"></i></button>
+                        <button class="m-1 btn btn-danger modificar btn-sm" title="Modificar" data-bs-toggle="modal" data-bs-target="#modalModificar"><i class="icofont icofont-law-document"></i></button>
                         `
                     }
                 ],
