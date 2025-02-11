@@ -15,8 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Usuario extends Model
 {
     use HasFactory;
-    protected $table  = 'usuarios';
-    protected $guarded = ['id'];
+    protected $table = 'usuarios';
 
 
     /**
