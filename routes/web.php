@@ -63,15 +63,12 @@ Route::get('usuarios/data', [UsuarioController::class, 'getUsuariosData'])->name
 
 Route::get('usuarios/editar', [UsuarioController::class, 'editar'])->name('usuario.update');
 
-
-
-
 Route::post('usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
 
-// Route::get('usuarios/editar', [UsuarioController::class, 'Fallecido'])->name('usuario.fallecer');
+Route::get('/usuario/editar/{id}', [UsuarioController::class, 'mostrar'])->name('usuario.mostrar');
+Route::put('/usuario/editar/{id}', [UsuarioController::class, 'editar'])->name('usuario.editar');
 
-Route::get('usuarios/editar', [UsuarioController::class, 'editar'])->name('usuario.editar');
-
+Route::get('usaurios/pdf', [UsuarioController::class, 'dowload']);
 Route::post('usuarios/{usuario}/modificar-porcentaje', [UsuarioController::class, 'modificarPorcentaje'])->name('porcentaje.modificar');
 
 //decretos
@@ -84,7 +81,7 @@ Route::get('materiales/data', [MaterialController::class, 'getMaterialesdata'])-
 
 //rutas de utilidades (medidas, sectores, etc)
 Route::get('utils/sectores', [UtilsController::class, 'listarsectores'])->name('sectores.listar');
-Route::post('uitls/sectores/store', [UtilsController::class, 'storesector'])->name('sectores.store');
+Route::post('utils/sectores/store', [UtilsController::class, 'storesector'])->name('sectores.store');
 Route::get('utils/sectores/destroy/{id}', [UtilsController::class, 'destroysector'])->name('sectores.destroy');
 
 
@@ -92,6 +89,10 @@ Route::get('utils/sectores/destroy/{id}', [UtilsController::class, 'destroysecto
 
 Route::get('reembolso/listar', [ReembolsoController::class, 'index'])->name('reembolso.vista');
 Route::get('rembolso/data', [ReembolsoController::class, 'getReembolsoData'])->name('reembolso.data');
+
+Route::get('usuarios/reembolso/{id}/nuevo', [ReembolsoController::class, 'create'])->name('reembolso.nuevo');
+
+Route::post('usuarios/reembolso/{id}', [ReembolsoController::class, 'reembolso'])->name('reembolso.store');
 
 //Municipal
 

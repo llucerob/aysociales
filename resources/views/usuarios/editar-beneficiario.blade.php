@@ -37,9 +37,10 @@
 
 
                     <form class="needs-validation theme-form" novalidate=""
-                        action="{{ route('Usuario.update', [$usuarios->id]) }}" method="post"
-                        enctype="multipart/form-data">
+                        action="{{ route('usuario.editar', $usuario->id) }}" method="POST" enctype="multipart/form-data">
+
                         @csrf
+                        @method('PUT')
                         <div class="card-body">
                             <div class="row g-3">
 
@@ -113,7 +114,7 @@
                                     <label class="form-label" for="inputRegistrosocial">Registro Social</label>
                                     <input class="form-control" id="inputRegistrosocial" type="text" required
                                         name="registrosocial" readOnly placeholder="1252831"
-                                        value="{{ $usuario->registrosocial->folioid }}">
+                                        value="{{ $usuario->folioid }}">
                                     <div class="valid-feedback">¡Luce bien!</div>
                                 </div>
                             </div>
@@ -122,8 +123,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="inputPorcentaje">Porcentaje</label>
                                     <input class="form-control" id="inputPorcentaje" type="number" name="porcentaje"
-                                        required readOnly placeholder="99"
-                                        value="{{ $usuario->registrosocial->porcentaje }}">
+                                        required readOnly placeholder="99" value="{{ $usuario->porcentaje }}">
                                     <div class="valid-feedback">¡Luce bien!</div>
                                 </div>
                             </div>
@@ -227,137 +227,7 @@
 
 
 
-        <div class="col-sm-6 notification box-col-6">
-            <div class="card card-no-border">
-                <div class="card-header ">
-                    <h5>Menú</h5>
 
-                </div>
-
-
-                <div class="pt-3 card-body">
-                    <a class="m-1 btn ver btn-dark btn-sm" href="{{ route('ver.pedidos', [$usuario->id]) }}"
-                        title="Ver"><i class="fa fa-eye"></i></a>
-
-                    <a class="m-1 btn solicitar btn-primary btn-sm" title="Solicitar Material"
-                        href="{{ route('Usuario.solicitar', [$usuario->id]) }}"><i class="fa fa-ticket"></i></a>
-                    <a class="m-1 btn btn-warning btn-sm" title="Crear Pdf"
-                        href="{{ route('crearfichainterna', [$usuario->id]) }}"><i class="fa fa-file-pdf-o"></i></a>
-                    <button data-bs-toggle="modal" data-bs-target="#modalSituacion" title="Ingresar Situaciones"
-                        class="m-1 btn btn-danger btn-sm"><i class="fa fa-plus"></i></button>
-
-
-                    <div class="modal fade" id="modalSituacion" tabindex="-1" role="dialog"
-                        aria-labelledby="modalSituacion" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <form action="{{ route('storesituacion', [$usuario->id]) }}" method="post">
-                                    @csrf
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Ingrese un nuevo hito</h5>
-                                        <button class="btn-close" type="button" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <div class="modal-toggle-wrapper">
-
-
-
-
-
-                                            <div class="col">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="tipo">Tipo</label>
-                                                    <select name="tipo" required class="form-control">
-                                                        <option value="familiar">Situación Familiar</option>
-                                                        <option value="salud">Situacion de Salud</option>
-                                                        <option value="profesional">Opinión Profesional</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="comentario">Mensaje</label>
-                                                    <textarea name="comentario" class="form-control" id="mensaje" cols="10" rows="10"></textarea>
-
-                                                </div>
-                                            </div>
-
-
-
-
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="submit" data-dismiss="modal"
-                                            class="btn btn-primary">Agregar</button>
-                                    </div>
-
-
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="card height-equal card-no-border">
-                <div class="card-header ">
-                    <h5>Historial Situaciones </h5>
-
-                </div>
-                <div class="pt-3 card-body">
-                    <ul style="padding-left:0px !important;">
-
-
-                        @foreach ($usuario->situaciones as $sit)
-                            <li class="d-flex">
-                                <div
-                                    @if ($sit->tipo == 'familiar') class="activity-dot-success" @elseif($sit->tipo == 'salud') class="activity-dot-danger"  @else class="activity-dot-primary" @endif>
-                                </div>
-                                <div class=" ms-3">
-                                    <p class="mt-3 mb-2 d-flex justify-content-between"><span
-                                            class="date-content light-background">{{ date_format($sit->updated_at, 'd/m/Y') }}</span>
-                                    </p>
-                                    <h6>
-                                        @if ($sit->tipo == 'familiar')
-                                            Hito Familiar
-                                        @elseif($sit->tipo == 'salud')
-                                            Hito Salud
-                                        @else
-                                            Opinión Profesional
-                                        @endif
-                                        <span class="dot-notification"> </span>
-                                    </h6>
-                                    <p class="f-light">{{ $sit->comentario }}</p>
-                                </div>
-                            </li>
-                        @endforeach
-
-
-
-
-                    </ul>
-                </div>
-
-
-
-            </div>
-        </div>
-
-
-
-
-
-
-    </div>
     </div>
 
     <script type="text/javascript">

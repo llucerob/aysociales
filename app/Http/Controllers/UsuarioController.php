@@ -6,8 +6,11 @@ use App\Models\usuario;
 use App\Models\Sector;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use App\Models\Reembolso;
 use Illuminate\Support\Facades\Log;
 use App\Models\RegistroSocial;
+use Dompdf\Dompdf;
+
 
 use Illuminate\Database\Eloquent\Builder;
 
@@ -21,14 +24,22 @@ class UsuarioController extends Controller
 
 
 
-    public function show($id)
+
+    public function download() {}
+
+
+
+
+
+
+
+    public function mostrar($id)
     {
-
         $usuario = Usuario::findOrFail($id);
-        return response()->json($usuario);
+        $sector = Sector::all();
+
+        return view('usuarios.editar-beneficiario', compact('usuario', 'sector'));
     }
-
-
 
     public function create()
     {
@@ -36,12 +47,13 @@ class UsuarioController extends Controller
         return view('usuarios.nuevo-usuario', compact('sectores'));
     }
 
-    public function editar()
+    public function editar(Request $request, $id)
     {
+        $usuario = Usuario::findOrFail($id);
 
+        $usuario->update($request->all());
 
-
-        return view('usuarios.editar-beneficiario');
+        return redirect()->route('usuario.mostrar', $id)->with('success', 'Usuario actualizado correctamente');
     }
 
 
@@ -78,6 +90,9 @@ class UsuarioController extends Controller
         return redirect()->route('usuarios.listar')->with('success', 'Usuario y Registro Social creados correctamente.');
     }
 
+
+
+
     public function marcarFallecido(Request $request, Usuario $usuario)
     {
         $usuario->fallecido = 'F';
@@ -106,7 +121,7 @@ class UsuarioController extends Controller
 
     public function getUsuariosData()
     {
-        // Seleccionamos los campos que queremos mostrar en la tabla
+
         $usuarios = Usuario::select(['id', 'rut', 'nombres', 'apellidos', 'telefono', 'correo']);
 
         return DataTables::of($usuarios)

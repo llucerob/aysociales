@@ -215,7 +215,7 @@
             setTimeout(function() {
                 // Habilitar el botón nuevamente
                 btn.removeAttribute('disabled');
-            }, 5000); // 3000 milisegundos = 3 segundos
+            }, 5000); // 5000 milisegundos = 5 segundos
         }
     </script>
 

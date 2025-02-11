@@ -11,8 +11,9 @@ class Reembolso extends Model
 {
     use HasFactory;
     protected $table = 'reembolsos';
+    protected $guarded = 'id';
 
-    protected function usuario():BelongsTo
+    protected function usuario(): BelongsTo
     {
         return $this->belongsTo(Usuario::class, 'usuario_id', 'id');
     }
@@ -26,7 +27,4 @@ class Reembolso extends Model
     {
         return $this->hasMany(Boleta::class, 'reembolso_id', 'id');
     }
-
-
-
 }

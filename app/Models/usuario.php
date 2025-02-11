@@ -14,48 +14,47 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Usuario extends Model
 {
     use HasFactory;
-    protected $table = 'usuarios';
+    protected $table  = 'usuarios';
+    protected $guarded = ['id'];
 
 
-     /**
-     * Get the registrosocial that owns the Beneficiario 
+    /**
+     * Get the registrosocial that owns the Beneficiario
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    
-     public function registrosocial(): BelongsTo
-     {
-         return $this->belongsTo(Registrosocial::class, 'registrosociales_id', 'id');
-     }
-     
- 
-     /**
-      * las solicitudes hechas por el beneficiario a traves de un pivote
-      *
-      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-      */
-     public function solicitudes(): BelongsToMany
-     {
-         return $this->belongsToMany(Material::class, 'solicitudes',  'beneficiario_id', 'materiales_id')
-                     ->as('solicitudes')
-                     ->withPivot('cantidad', 'medida', 'entregado','id', 'domicilio', 'comentario', 'atendido' )
-                     ->withTimestamps();
- 
-     }
-     /**
-      * las solicitudes hechas por el beneficiario a traves de un pivote
-      *
-      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-      */
-     public function entregados(): BelongsToMany
-     {
-         return $this->belongsToMany(Material::class, 'entregados',  'beneficiario_id', 'materiales_id')
-                     ->as('entregados')
-                     ->withPivot('cantidad', 'medida', 'domicilio', 'comentario', 'atendido' )
-                     ->withTimestamps();
- 
-     }
- 
+
+    public function registrosocial(): BelongsTo
+    {
+        return $this->belongsTo(Registrosocial::class, 'registrosociales_id', 'id');
+    }
+
+
+    /**
+     * las solicitudes hechas por el beneficiario a traves de un pivote
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function solicitudes(): BelongsToMany
+    {
+        return $this->belongsToMany(Material::class, 'solicitudes',  'beneficiario_id', 'materiales_id')
+            ->as('solicitudes')
+            ->withPivot('cantidad', 'medida', 'entregado', 'id', 'domicilio', 'comentario', 'atendido')
+            ->withTimestamps();
+    }
+    /**
+     * las solicitudes hechas por el beneficiario a traves de un pivote
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function entregados(): BelongsToMany
+    {
+        return $this->belongsToMany(Material::class, 'entregados',  'beneficiario_id', 'materiales_id')
+            ->as('entregados')
+            ->withPivot('cantidad', 'medida', 'domicilio', 'comentario', 'atendido')
+            ->withTimestamps();
+    }
+
     /**
      * Get the user associated with the Beneficiario
      *
@@ -63,11 +62,13 @@ class Usuario extends Model
      */
     public function cuenta(): HasOne
     {
-        return $this->hasOne(CuentaBancaria::class, 'beneficiario_id', 'id')->withDefault(['banco' => '00',
-                                                                                           'tipocuenta' => '00',
-                                                                                           'numerocuenta' => '00']);
-    }   
-    
+        return $this->hasOne(CuentaBancaria::class, 'beneficiario_id', 'id')->withDefault([
+            'banco' => '00',
+            'tipocuenta' => '00',
+            'numerocuenta' => '00'
+        ]);
+    }
+
     /**
      * Get all of the comments for the Beneficiario
      *
@@ -77,14 +78,25 @@ class Usuario extends Model
     {
         return $this->hasMany(Reembolso::class, 'beneficiarios_id', 'id');
     }
- 
-  /**
-   * Get all of the comments for the Beneficiario
-   *
-   * @return \Illuminate\Database\Eloquent\Relations\HasMany
-   */
-     public function situaciones(): HasMany
-     {
-      return $this->hasMany(Situacion::class, 'beneficiario_id', 'id');
-      }
+
+    /**
+     * Get all of the comments for the Beneficiario
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function situaciones(): HasMany
+    {
+        return $this->hasMany(Situacion::class, 'beneficiario_id', 'id');
+    }
+
+
+
+
+
+
+    // En el modelo Usuario (Usuario.php)
+    public function reembolsos()
+    {
+        return $this->hasMany(Reembolso::class);
+    }
 }
