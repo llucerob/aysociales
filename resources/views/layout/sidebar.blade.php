@@ -49,9 +49,8 @@
                         </svg><span>Valorizaciones</span></a>
                     <ul class="sidebar-submenu">
                         
-                        <li><a href="{{ route('actividades.trabajosrealizados') }}">Trabajos Realizados</a></li>
-                        <li><a href="{{ route('actividades.historial') }}">Historial Valorizaciones</a></li>
-                        <li><a href="#">Valorizar Bodega</a></li>
+                        <li><a href="">Trabajos Realizados</a></li>
+                        
                         
                     </ul>
                     </li>
@@ -74,9 +73,8 @@
                             </svg><span>Actividades </span></a>
                         <ul class="sidebar-submenu">
                             
-                            <li><a href="{{ route('actividades.index')}}">Listar Actividades</a></li>
-                            <li><a href="{{ route('actividades.enproceso')}}">Listar Actividades En Proceso</a></li>
-                            <li><a href="{{ route('actividades.create')}}">Crear Actividad</a></li>
+                            <li><a href="">Listar Actividades</a></li>
+                            
                         </ul>
                     </li>
                     @endrole
@@ -98,8 +96,8 @@
                         <ul class="sidebar-submenu">
                             
                             
-                            <li><a href="{{ route('actividades.enproceso')}}">Actividades En Proceso</a></li>
-                            <li><a href="{{ route('actividades.create')}}">Crear Actividad</a></li>
+                            <li><a href="">Actividades En Proceso</a></li>
+                            
                         </ul>
                     </li>
                     @endrole
@@ -118,10 +116,8 @@
                                 <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
                             </svg><span>Materiales</span></a>
                         <ul class="sidebar-submenu">
-                            <li><a href="{{ route('materiales.index') }}">Listar Materiales</a></li>
-                            <li><a href="{{ route('materiales.create') }}">Crear Nuevo Material</a></li>
-                            <li><a href="{{ route('materiales.reservados') }}">Materiales Reservados</a></li>
-                            <li><a href="{{ route('materiales.recibirdevolucion') }}">Recibir Devolucion</a></li>
+                            <li><a href="">Listar Materiales</a></li>
+                            
                             
                     
                         </ul>
@@ -140,8 +136,8 @@
                                 <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
                             </svg><span>Materiales</span></a>
                         <ul class="sidebar-submenu">
-                            <li><a href="{{ route('materiales.index') }}">Listar Materiales</a></li>
-                            <li><a href="{{ route('materiales.create') }}">Crear Nuevo Material</a></li>
+                            <li><a href="">Listar Materiales</a></li>
+                          
                             
                         </ul>
                     </li>
@@ -159,8 +155,8 @@
                             <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
                         </svg><span>Proveedores</span></a>
                     <ul class="sidebar-submenu">
-                        <li><a href="{{route('proveedores.create')}}">Crear Nuevo Proveedor</a></li>
-                        <li><a href="{{route('proveedores.index')}}">Listar Proveedor</a></li>
+                        <li><a href="">Crear Nuevo Proveedor</a></li>
+                        
                         
                         
                         
@@ -174,7 +170,7 @@
                         </svg><span>Compras</span></a>
                     <ul class="sidebar-submenu">
                         <li><a href="#">Ingresar Compra</a></li>
-                        <li><a href="{{ route('materiales.consultacompras') }}">Consultar Compras</a></li>
+                        <li><a href="">Consultar Compras</a></li>
                         
                         
                         
@@ -188,7 +184,7 @@
                         </svg><span>Medidas</span></a>
                     <ul class="sidebar-submenu">
                         
-                        <li><a href="{{route('medidas.index')}}">Listar Medidas</a></li>
+                        <li><a href="">Listar Medidas</a></li>
                         
                         
                     </ul>

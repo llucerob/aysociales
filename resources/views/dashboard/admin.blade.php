@@ -76,7 +76,7 @@
             <div class="col-xxl-auto col-xl-3 col-sm-6 box-col-3">
                 <div class="row">
                     <div class="col-xl-12">
-                      <a href="{{ route('actividades.enproceso') }}">
+                      <a href="#">
                         <div class="card widget-1">
                             <div class="card-body">
                                 <div class="widget-content">
@@ -89,7 +89,7 @@
                                     </div>
                                     <div>
                                     
-                                    <h4><span class="counter" data-target="{{ $actividad['en_proceso'] }}">{{ $actividad['en_proceso'] }}</span></h4><span
+                                    <h4><span class="counter" data-target=""></span></h4><span
                                             class="f-light">Actividades en proceso</span>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                         </a>
                         
                         <div class="col-xl-12">
-                        <a href="{{ route('proveedores.index') }}">
+                        <a href="#">
                             <div class="card widget-1">
                                 <div class="card-body">
                                     <div class="widget-content">
@@ -113,7 +113,7 @@
                                                 </svg></div>
                                         </div>
                                         <div>
-                                            <h4> <span class="counter" data-target="{{ $actividad['proveedores'] }}">{{ $actividad['proveedores'] }}</span></h4><span
+                                            <h4> <span class="counter" data-target=""></span></h4><span
                                                 class="f-light">Proveedores</span>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@
             <div class="col-xxl-auto col-xl-3 col-sm-6 box-col-3">
                 <div class="row">
                     <div class="col-xl-12">
-                    <a href="{{ route('actividades.trabajosrealizados') }}">
+                    <a href="#">
                         <div class="card widget-1">
                             <div class="card-body">
                                 <div class="widget-content">
@@ -142,7 +142,7 @@
                                             </svg></div>
                                     </div>
                                     <div>
-                                        <h4> <span class="counter" data-target="{{ $actividad['por_valorizar'] }}">{{ $actividad['por_valorizar'] }}</span></h4><span
+                                        <h4> <span class="counter" data-target=""></span></h4><span
                                             class="f-light">Actividades por Valorizar</span>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@
                         </div>
                         </a>
                         <div class="col-xl-12">
-                        <a href="{{ route('actividades.historial') }}">
+                        <a href="#">
                             <div class="card widget-1">
                                 <div class="card-body">
                                     <div class="widget-content">
@@ -165,7 +165,7 @@
                                                 </svg></div>
                                         </div>
                                         <div>
-                                            <h4 class="counter" data-target="{{ $actividad['valorizada'] }}">{{ $actividad['valorizada'] }}</h4><span
+                                            <h4 class="counter" data-target=""></h4><span
                                                 class="f-light">Actividades Valorizadas</span>
                                         </div>
                                     </div>
