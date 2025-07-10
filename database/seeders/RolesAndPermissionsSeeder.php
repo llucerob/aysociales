@@ -19,6 +19,7 @@ class RolesAndPermissionsSeeder extends Seeder
           $socialRole = Role::create(['name' => 'social']);
           $bodegaRole = Role::create(['name' => 'bodega']);
           $viviendaRole  = Role::create(['name' => 'vivienda']);
+          $dimasRole  = Role::create(['name' => 'dimas']);
   
           /* Create permissions
           $createPostPermission = Permission::create(['name' => 'create post']);
