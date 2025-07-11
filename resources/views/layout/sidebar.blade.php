@@ -2,7 +2,7 @@
 <div class="sidebar-wrapper" data-sidebar-layout="stroke-svg">
     <div>
         <div class="logo-wrapper text-center"><a href="{{route('dashboard')}}"><img class="img-fluid for-light"
-                    src="{{ asset('assets/images/logo/logo_serviciosayf.png') }}" width="80px" alt=""></a>
+                    src="{{ asset('assets/logo/logom.png') }}" width="80px" alt=""></a>
             <div class="back-btn"><i class="fa-solid fa-angle-left"></i></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid">
                 </i></div>
@@ -23,10 +23,10 @@
                             <h6>Favoritos</h6>
                         </div>
                     </li>
-                    @role(['admin'])  
+                    
                     <li class="sidebar-main-title">
                         <div>
-                            <h6>Valorizaciones</h6>
+                            <h6>Social</h6>
                         </div>
                     </li>
                     <!--<li class="sidebar-list"><i class="fa-solid fa-thumbtack"> </i><a
@@ -46,43 +46,20 @@
                             <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
                         </svg><svg class="fill-icon">
                             <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
-                        </svg><span>Valorizaciones</span></a>
+                        </svg><span>Usuarios</span></a>
                     <ul class="sidebar-submenu">
                         
-                        <li><a href="">Trabajos Realizados</a></li>
-                        
-                        
-                    </ul>
-                    </li>
-                    @endrole
-               
-                    
-                     @role(['admin'])  
-                    <li class="sidebar-main-title">
-                        <div>
-                            <h6>Supervisor</h6>
-                        </div>
-                    </li>
-                   
-                 
-                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"> </i><a
-                            class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
-                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
-                            </svg><svg class="fill-icon">
-                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
-                            </svg><span>Actividades </span></a>
-                        <ul class="sidebar-submenu">
-                            
-                            <li><a href="">Listar Actividades</a></li>
-                            
-                        </ul>
-                    </li>
-                    @endrole
+                        <li><a href="">Listar Beneficiarios</a></li>
+                        <li><a href="">Nuevo Beneficiarios</a></li>
 
-                    @role(['secretaria','supervisor'])  
+                        
+                        
+                    </ul>
+                    </li>
+                  
                     <li class="sidebar-main-title">
                         <div>
-                            <h6>Supervisor</h6>
+                            <h6>Reembolsos</h6>
                         </div>
                     </li>
                    
@@ -92,105 +69,91 @@
                                 <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
                             </svg><svg class="fill-icon">
                                 <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
-                            </svg><span>Actividades </span></a>
+                            </svg><span>Reembolsos </span></a>
                         <ul class="sidebar-submenu">
                             
-                            
-                            <li><a href="">Actividades En Proceso</a></li>
+                            <li><a href="">Listar Reembolsos</a></li>
+                            <li><a href="">Nomina Transferencia</a></li>
+                            <li><a href="">Rectificación Aportes</a></li>
+
                             
                         </ul>
                     </li>
-                    @endrole
+
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Análisis</h6>
+                        </div>
+                    </li>
                    
-                   
-                     @role(['admin','bodega'])
+                 
+                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"> </i><a
+                            class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
+                            </svg><svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg><span>Decreto Mensual </span></a>
+                        <ul class="sidebar-submenu">
+                            
+                            <li><a href="">Crear Decreto</a></li>
+                            
+                        </ul>
+                    </li>
+
                     <li class="sidebar-main-title">
                         <div>
                             <h6>Bodega</h6>
                         </div>
                     </li>
-                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
+                   
+                 
+                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"> </i><a
                             class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
-                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-form') }}"></use>
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
                             </svg><svg class="fill-icon">
-                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
-                            </svg><span>Materiales</span></a>
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg><span>Materiales </span></a>
                         <ul class="sidebar-submenu">
+                            
                             <li><a href="">Listar Materiales</a></li>
+                             <li><a href="">Nuevo Material</a></li>
+                              <li><a href="">Medidas</a></li>
                             
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"> </i><a
+                            class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
+                            </svg><svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg><span>Categoria</span></a>
+                        <ul class="sidebar-submenu">
                             
+                            <li><a href="">Crear Decreto</a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"> </i><a
+                            class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-project') }}"></use>
+                            </svg><svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
+                            </svg><span>Sectores</span></a>
+                        <ul class="sidebar-submenu">
+                            
+                            <li><a href="">Crear Decreto</a></li>
+                            
+                        </ul>
+                    </li>
+                   
+                   
                     
-                        </ul>
-                    </li>
-                    @endrole
-                    @role(['secretaria'])
-                    <li class="sidebar-main-title">
-                        <div>
-                            <h6>Bodega</h6>
-                        </div>
-                    </li>
-                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
-                            class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
-                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-form') }}"></use>
-                            </svg><svg class="fill-icon">
-                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
-                            </svg><span>Materiales</span></a>
-                        <ul class="sidebar-submenu">
-                            <li><a href="">Listar Materiales</a></li>
-                          
-                            
-                        </ul>
-                    </li>
-                    @endrole
-                    @role(['admin','secretaria'])
-                    <li class="sidebar-main-title">
-                        <div>
-                            <h6>Administrativo</h6>
-                        </div>
-                    </li>
-                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
-                        class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-form') }}"></use>
-                        </svg><svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
-                        </svg><span>Proveedores</span></a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="">Crear Nuevo Proveedor</a></li>
-                        
-                        
-                        
-                        
-                    </ul>
-                    </li>
-                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
-                        class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-form') }}"></use>
-                        </svg><svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
-                        </svg><span>Compras</span></a>
-                    <ul class="sidebar-submenu">
-                        <li><a href="#">Ingresar Compra</a></li>
-                        <li><a href="">Consultar Compras</a></li>
-                        
-                        
-                        
-                    </ul>
-                    </li>
-                    <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a
-                        class="sidebar-link sidebar-title" href="javascript:void(0)"><svg class="stroke-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-form') }}"></use>
-                        </svg><svg class="fill-icon">
-                            <use href="{{ asset('assets/svg/icon-sprite.svg#fill-form') }}"> </use>
-                        </svg><span>Medidas</span></a>
-                    <ul class="sidebar-submenu">
-                        
-                        <li><a href="">Listar Medidas</a></li>
-                        
-                        
-                    </ul>
-                    </li>
-                    @endrole
-                             
+                   
+                   
+                   
                     
                     
                 </ul>
