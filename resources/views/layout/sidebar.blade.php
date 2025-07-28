@@ -60,8 +60,8 @@
                         </svg><span>Usuarios</span></a>
                     <ul class="sidebar-submenu">
                         
-                        <li><a href="">Listar Beneficiarios</a></li>
-                        <li><a href="">Nuevo Beneficiarios</a></li>
+                        <li><a href="">Listado Usuarios</a></li>
+                        <li><a href="">Crear Usuario</a></li>
                         <li><a href="">Entrega Domicilio</a></li>
 
                         

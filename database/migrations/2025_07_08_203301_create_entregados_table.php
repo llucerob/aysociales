@@ -24,7 +24,7 @@ return new class extends Migration
             $table->enum('entrega', ['domicilio', 'local'])
                   ->default('local');
             $table->string('observaciones')->nullable();
-            $table->string('atentido');
+            $table->string('atendido');
             $table->string('origen');
             $table->timestamps();
         });
