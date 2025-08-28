@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout.master')
 
 @section('title', 'Listar Beneficiario - I. Municipalidad Coinco')
 
@@ -21,7 +21,27 @@
    
 @endsection
 
-@section('content')
+@section('main_content')
+
+
+<div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Listado Usuarios </h3>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"> <svg class="stroke-icon">
+                                    <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-home') }}"></use>
+                                </svg></a></li>
+                        <li class="breadcrumb-item">Usuarios</li>
+                        <li class="breadcrumb-item active">Listar Usuarios </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+</div><!-- Container-fluid starts-->
 <div class="container-fluid">
     <div class="row starter-main">
        
@@ -68,7 +88,7 @@
                                       </div>
                                       <h4 class="text-center pb-2">¿Realmente desea marcar como fallecido este registro?</h4>
                                       <p class="text-center">Esta acción no se puede deshacer</p>
-                                      <form action="{{route('beneficiario.fallecer')}}"  method="post" enctype="multipart/form-data">
+                                      <form action=""  method="post" enctype="multipart/form-data">
                                         @csrf
                                         <input type="text" id="idusuario" name="idusuario" hidden>
                                         <button class="btn btn-secondary d-flex m-auto" type="submit">Marcar como Fallecido</button>
@@ -112,7 +132,7 @@
                                     <h5 class="modal-title">Registro social Hogares</h5>
                                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                            <form action="{{route('porcentaje.modificar')}}"  method="post" enctype="multipart/form-data">
+                            <form action=""  method="post" enctype="multipart/form-data">
                                 @csrf
                             <div class="modal-body">
 
@@ -143,7 +163,7 @@
                                 <h5 class="modal-title">Generar Aporte</h5>
                             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                        <form action="{{route('crear.devolucion')}}" method="post" enctype="multipart/form-data">
+                        <form action="" method="post" enctype="multipart/form-data">
                             @csrf
                         <div class="modal-body">
 
@@ -226,7 +246,7 @@
 
             var tabla = $('#beneficiarios').DataTable({
                     language: {url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-CL.json'},
-                    ajax: '{{route('datatable.beneficiarios')}}',
+                   
                     columns: [
                         {data: 'rut'},
                         {data: 'nombre'},

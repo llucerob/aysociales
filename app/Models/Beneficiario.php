@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Beneficiario extends Model
 {
+
+    protected $table = 'beneficiarios';
     /**
      * Get the registrosocial that owns the Beneficiario
      *
