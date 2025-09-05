@@ -102,7 +102,7 @@ class UsuariosController extends Controller
             if($r->folioid == $request->registrosocial){
                 $r->porcentaje = $request->porcentaje;
                 $r->update();
-                $beneficiario->registrosociales_id = $r->id;
+                $beneficiario->rsh_id = $r->id;
 
 
             }
@@ -116,7 +116,7 @@ class UsuariosController extends Controller
             $registro->folioid      = $request->registrosocial;
             $registro->porcentaje   = $request->porcentaje;
             $registro->save();
-            $beneficiario->registrosociales_id = $registro->id;
+            $beneficiario->rsh_id = $registro->id;
 
 
         }
@@ -187,14 +187,14 @@ class UsuariosController extends Controller
                 $registro->folioid      = $request->registrosocial;
                 $registro->porcentaje   = $request->porcentaje;
                 $registro->update();
-                $beneficiario->registrosociales_id = $r->id; 
+                $beneficiario->rsh_id = $r->id; 
 
             }else{
                 $registro               = new Registrosocial;
                 $registro->folioid      = $request->registrosocial;
                 $registro->porcentaje   = $request->porcentaje;
                 $registro->save();
-                $beneficiario->registrosociales_id = $registro->id;
+                $beneficiario->rsh_id = $registro->id;
 
             }              
         }
