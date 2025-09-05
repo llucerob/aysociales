@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout.master')
 
 @section('title', 'Nuevo Beneficiario - I. Municipalidad Coinco')
 
