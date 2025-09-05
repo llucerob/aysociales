@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
     Route::post('beneficiario/{id}/editarcuenta', [UsuariosController::class, 'editarcuenta'])->name('editar.cuenta');
     Route::get('beneficiario/reenviar/{decreto}', [UsuariosController::class, 'reenviadecreto'])->name('reenviar.decreto');
 
-    
+    Route::get('datatable/beneficiarios', [UsuariosController::class, 'ajaxbeneficiarios'])->name('datatable.beneficiarios');
 
     
 });

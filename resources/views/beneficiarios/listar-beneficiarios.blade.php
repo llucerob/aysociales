@@ -246,6 +246,7 @@
 
             var tabla = $('#beneficiarios').DataTable({
                     language: {url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/es-CL.json'},
+                     ajax: '{{route('datatable.beneficiarios')}}',
                    
                     columns: [
                         {data: 'rut'},
