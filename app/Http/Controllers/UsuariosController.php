@@ -40,7 +40,7 @@ class UsuariosController extends Controller
             if($b->fallecido == 'V'){
             
             $arr[$key]['rut']                   = $b->rut;
-            $arr[$key]['nombre']                = $b->nombres.' '.$b->apellidos.' ('.Carbon::parse($b->fnac)->age.' Años)';
+            $arr[$key]['nombre']                = $b->nombres.' '.$b->apellidos.' ('.Carbon::parse($b->fecha_nacimiento)->age.' Años)';
 
             if($b->registrosocial->updated_at == null){
                 $arr[$key]['registrosocial']    = $b->registrosocial->folioid.' ('.$b->registrosocial->porcentaje.'% Fecha: '.$b->registrosocial->fechainforme.')';
@@ -85,7 +85,7 @@ class UsuariosController extends Controller
         $beneficiario->nombres          = $request->nombres;
         $beneficiario->apellidos        = $request->apellidos;
         $beneficiario->rut              = $request->rut;
-        $beneficiario->fnac             = $request->fecha_nacimiento;
+        $beneficiario->fecha_nacimiento = $request->fnac;
         $beneficiario->direccion        = $request->direccion;
         $beneficiario->sector           = $request->sector;
         $beneficiario->telefono         = $request->telefono;
@@ -102,7 +102,7 @@ class UsuariosController extends Controller
             if($r->folioid == $request->registrosocial){
                 $r->porcentaje = $request->porcentaje;
                 $r->update();
-                $beneficiario->registrosociales_id = $r->id;
+                $beneficiario->rsh_id = $r->id;
 
 
             }
@@ -116,7 +116,7 @@ class UsuariosController extends Controller
             $registro->folioid      = $request->registrosocial;
             $registro->porcentaje   = $request->porcentaje;
             $registro->save();
-            $beneficiario->registrosociales_id = $registro->id;
+            $beneficiario->rsh_id = $registro->id;
 
 
         }
@@ -160,7 +160,7 @@ class UsuariosController extends Controller
         $beneficiario->nombres          = $request->nombres;
         $beneficiario->apellidos        = $request->apellidos;
         $beneficiario->rut              = $request->rut;
-        $beneficiario->fnac             = $request->fecha_nacimiento;
+        $beneficiario->fecha_nacimiento = $request->fnac;
         $beneficiario->direccion        = $request->direccion;
         $beneficiario->sector           = $request->sector;
         $beneficiario->telefono         = $request->telefono;
@@ -187,14 +187,14 @@ class UsuariosController extends Controller
                 $registro->folioid      = $request->registrosocial;
                 $registro->porcentaje   = $request->porcentaje;
                 $registro->update();
-                $beneficiario->registrosociales_id = $r->id; 
+                $beneficiario->rsh_id = $r->id; 
 
             }else{
                 $registro               = new Registrosocial;
                 $registro->folioid      = $request->registrosocial;
                 $registro->porcentaje   = $request->porcentaje;
                 $registro->save();
-                $beneficiario->registrosociales_id = $registro->id;
+                $beneficiario->rsh_id = $registro->id;
 
             }              
         }
