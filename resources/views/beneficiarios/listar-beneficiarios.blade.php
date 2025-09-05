@@ -228,7 +228,7 @@
    
 @endsection
 
-@section('script')
+@section('scripts')
     
     <!-- <script src="{{asset('assets/js/touchspin/vendors.min.js')}}"></script>-->
     <script src="{{asset('assets/js/touchspin/touchspin.js')}}"></script>

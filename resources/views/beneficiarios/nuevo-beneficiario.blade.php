@@ -114,7 +114,7 @@
                 <div class="col-md-4">
                   <div class="mb-3">
                     <label class="form-label" for="inputgrupofam">Grupo Familiar</label>
-                    <input class="form-control" id="inputgrupofam" type="number" name="grupofam" required
+                    <input class="form-control" id="inputgrupofam" type="number" name="grupofamiliar" required
                       placeholder="99">
                     <div class="valid-feedback">¡Luce bien!</div>
                   </div>

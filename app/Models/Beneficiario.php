@@ -20,7 +20,7 @@ class Beneficiario extends Model
     
     public function registrosocial(): BelongsTo
     {
-        return $this->belongsTo(Registrosocial::class, 'registrosociales_id', 'id');
+        return $this->belongsTo(Registrosocial::class, 'rsh_id', 'id');
     }
     
 
