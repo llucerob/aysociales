@@ -161,7 +161,7 @@
                             </svg><span>Sectores</span></a>
                         <ul class="sidebar-submenu">
                             
-                            <li><a href="">Menú Sectores</a></li>
+                            <li><a href="{{ route('sectores')}}">Menú Sectores</a></li>
                             
                         </ul>
                     </li>

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\UtilsController;
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -53,6 +54,29 @@ Route::middleware('auth')->group(function () {
     Route::get('beneficiario/reenviar/{decreto}', [UsuariosController::class, 'reenviadecreto'])->name('reenviar.decreto');
 
     Route::get('datatable/beneficiarios', [UsuariosController::class, 'ajaxbeneficiarios'])->name('datatable.beneficiarios');
+
+
+
+
+
+
+
+       //CONTROLADORES UTILIDADES
+
+    Route::get('utils/medidas', [UtilsController::class, 'medidas'])->name('medidas');
+    Route::post('utils/medidas/guardar', [UtilsController::class, 'storemedidas'])->name('medidas.store');
+    Route::get('utils/medidas/destroy/{id}', [UtilsController::class, 'destroymedidas']);
+
+    Route::get('utils/categorias', [UtilsController::class, 'categorias'])->name('categorias');
+    Route::post('utils/categorias/guardar', [UtilsController::class, 'storecategorias'])->name('categorias.store');
+    Route::get('utils/categorias/destroy/{id}', [UtilsController::class, 'destroycategorias']);
+    
+    Route::get('utils/sectores', [UtilsController::class, 'sectores'])->name('sectores');
+    Route::post('utils/sectores/guardar', [UtilsController::class, 'storesectores'])->name('sectores.store');
+    Route::get('utils/sectores/destroy/{id}', [UtilsController::class, 'destroysectores']);
+
+
+    Route::post('utils/impresion/sectores', [UtilsController::class, 'imprimesectores'])->name('eleccion.sectores');
 
     
 });
