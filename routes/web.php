@@ -20,10 +20,9 @@ Route::middleware('auth')->group(function () {
     //BENEFICIARIOS == USUARIOS
 
     Route::get('/beneficiarios', [UsuariosController::class, 'index'])->name('beneficiarios.index');
-
-
-
-
+    Route::get('/beneficiarios/create', [UsuariosController::class, 'create'])->name('beneficiarios.create');
+    Route::post('/beneficiarios', [UsuariosController::class, 'store'])->name('beneficiarios.store');
+    
 });
 
 require __DIR__.'/auth.php';

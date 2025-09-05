@@ -59,13 +59,10 @@
                             <use href="{{ asset('assets/svg/icon-sprite.svg#fill-project') }}"></use>
                         </svg><span>Usuarios</span></a>
                     <ul class="sidebar-submenu">
-                        
                         <li><a href="">Listado Usuarios</a></li>
-                        <li><a href="">Crear Usuario</a></li>
+                        <li><a href="{{ route('beneficiarios.create') }}">Crear Usuario</a></li>
                         <li><a href="">Entrega Domicilio</a></li>
 
-                        
-                        
                     </ul>
                     </li>
                   
